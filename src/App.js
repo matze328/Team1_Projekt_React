@@ -8,20 +8,25 @@ import Content from "./components/layout/content";
 import AboutMePage from "./pages/aboutme-page";
 import Footer from "./components/layout/footer";
 import ToDoPage from "./pages/todo-page/";
+import Sidebar from "./components/layout/sidebar-home/Sidebar";
 
 function App() {
   return (
     <BrowserRouter>
       <NavigationBar />
+      <Sidebar />
       <Content>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/"
+            // element={<HomePage />}
+          />
           <Route path="/impressum" element={<ImpressumPage />} />
           <Route path="/aboutme" element={<AboutMePage />} />
           <Route path="/todo" element={<ToDoPage />} />
         </Routes>
       </Content>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }
