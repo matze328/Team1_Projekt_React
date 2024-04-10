@@ -15,3 +15,9 @@
     flex: 1;
     display: none;
   }
+  .footerInfo {
+    color: white;
+    font-size: 20px;
+    font-family: "Courier New", Courier, monospace;
+    margin-left: 50px;
+  }

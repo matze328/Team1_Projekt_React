@@ -11,8 +11,8 @@ const SearchBar = () => {
 
     return (
         <div className={styles.mainContainer}> 
-                  <input
-                
+                  <input 
+                  className={styles.input}
                 type="text"
                 placeholder="Suche..."
                 value={searchTerm}
