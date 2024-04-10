@@ -1,0 +1,42 @@
+.mainContainer {
+  height: 100%;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+.spacer {
+  width: 4px;
+  height: 4px;
+}
+.logImg {
+  width: 50px;
+  border-radius: 16px;
+}
+@media screen and (min-width: 320px) {
+  .mainContainer {
+    flex-direction: row;
+    margin-top: 0px;
+  }
+}
+.social {
+  height: 25px;
+  color: white;
+  &:hover {
+    color: var(--primary-color);
+  }
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid;
+  width: 25px;
+  border-radius: 16px;
+  margin-top: 4px;
+  border-color: white;
+  &:hover {
+    border-color: var(--primary-color);
+  }
+}

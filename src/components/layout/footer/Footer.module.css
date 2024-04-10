@@ -3,10 +3,15 @@
   min-height: 100px;
   /* background-color: --background-color; */
   margin-left: 2px;
-    background-image: url("../../../images/Matrix.gif");
-    display: inline-block;
+    background-image: url("../../../images/Matrix.gif"); 
     background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
-    background-color: black;
   }
 
+  .spacer {
+    flex: 1;
+    display: none;
+  }
