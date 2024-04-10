@@ -1,5 +1,12 @@
 .mainContainer {
-  width: 100vw;
+  width: 99vw;
   min-height: 100px;
-  background-color: blueviolet;
-}
+  /* background-color: --background-color; */
+  margin-left: 2px;
+    background-image: url("../../../images/Matrix.gif");
+    display: inline-block;
+    background-size: cover;
+    align-items: center;
+    background-color: black;
+  }
+
