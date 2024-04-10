@@ -8,3 +8,12 @@
   height: 100vh;
   background-color: black;
 }
+.playlist {
+display: flex;
+justify-content: flex-end;
+margin-right: 130px;
+margin-top: 104px;
+margin-bottom: 4px;
+
+
+}
