@@ -9,6 +9,7 @@ import AboutMePage from "./pages/aboutme-page";
 import Footer from "./components/layout/footer";
 import ToDoPage from "./pages/todo-page/";
 import Sidebar from "./components/layout/sidebar-home/Sidebar";
+import NewsPage from "./pages/news-page";
 
 function App() {
   return (
@@ -17,13 +18,11 @@ function App() {
       <Sidebar />
       <Content>
         <Routes>
-          <Route
-            path="/"
-            // element={<HomePage />}
-          />
+          <Route path="/" element={<HomePage />} />
           <Route path="/impressum" element={<ImpressumPage />} />
           <Route path="/aboutme" element={<AboutMePage />} />
           <Route path="/todo" element={<ToDoPage />} />
+          <Route path="/news&blog" element={<NewsPage />} />
         </Routes>
       </Content>
       <Footer />

@@ -1,23 +1,24 @@
 .mainContainer {
-  width: 99vw;
+  width: 98vw;
   min-height: 100px;
   /* background-color: --background-color; */
   margin-left: 2px;
-    background-image: url("../../../images/Matrix.gif"); 
-    background-size: cover;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-  }
+  background-image: url("../../../images/Matrix.gif");
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  position: bottom;
+}
 
-  .spacer {
-    flex: 1;
-    display: none;
-  }
-  .footerInfo {
-    color: white;
-    font-size: 20px;
-    font-family: "Courier New", Courier, monospace;
-    margin-left: 50px;
-  }
+.spacer {
+  flex: 1;
+  display: none;
+}
+.footerInfo {
+  color: white;
+  font-size: 20px;
+  font-family: "Courier New", Courier, monospace;
+  margin-left: 50px;
+}

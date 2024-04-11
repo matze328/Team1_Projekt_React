@@ -1,5 +1,10 @@
 .mainContainer {
-  margin-top: 100px;
-  width: 100%;
-  background-color: red;
+}
+
+.playlist {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 130px;
+  margin-top: 104px;
+  margin-bottom: 4px;
 }

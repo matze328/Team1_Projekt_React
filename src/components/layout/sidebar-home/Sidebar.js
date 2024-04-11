@@ -4,6 +4,9 @@ import { PiRadio } from "react-icons/pi";
 import { faker } from "@faker-js/faker";
 
 function Sidebar() {
+  const redirectToNewsPage = () => {
+    window.location.href = "http://localhost:3000/news&blog";
+  };
   return (
     <div className={styles.mainContainer}>
       <img
@@ -18,7 +21,11 @@ function Sidebar() {
       <div className={styles.iconContainer}>
         <PiRadio className={styles.icon} size={80} />
       </div>
-      <div className={styles.iconContainerNews} size={80}></div>
+      <div
+        className={styles.iconContainerNews}
+        onClick={redirectToNewsPage}
+        size={80}
+      ></div>
     </div>
   );
 }
