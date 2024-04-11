@@ -7,7 +7,7 @@ function NavBarRight() {
       <StandardBtn text={"Login"} />
 
       <div className={styles.spacer} />
-      <StandardBtn text={"Sign Up"} />
+      <StandardBtn text={"SignUp"} />
     </div>
   );
 }
