@@ -1,14 +1,15 @@
 .mainContainer {
   background-color: var(--secondary-color);
   display: flex;
-  justify-content: flex-end;
   flex-direction: column;
   align-items: center;
-  border-left: 1px solid #00fd00;
-  height: auto;
-  width: 161px;
+  border-right: 1px solid #00fd00;
+  position: fixed;
+  height: fit-content;
+  width: 96px;
   top: 8px;
-  margin-top: 8px;
+  margin-left: 130px;
+  margin-top: 104px;
   margin-bottom: 4px;
 }
 
@@ -20,8 +21,7 @@
   align-items: center;
   justify-content: center;
   border: 5px solid;
-  height: 147px;
-  width: 147px;
+  width: 80px;
   border-radius: 16px;
   margin-top: 4px;
   border-color: white;
@@ -38,8 +38,8 @@
   align-items: center;
   justify-content: center;
   border: 5px solid;
-  width: 147px;
-  height: 147px;
+  width: 80px;
+  height: 80px;
   border-radius: 16px;
   margin-top: 4px;
   border-color: white;

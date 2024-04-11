@@ -11,20 +11,25 @@ import ToDoPage from "./pages/todo-page/";
 import Sidebar from "./components/layout/sidebar-home/Sidebar";
 import NewsPage from "./pages/news-page";
 import LogInPage from "./pages/login-page";
+import UserPage from "./pages/user-page";
+import StartPage from "./pages/start-page";
+import SidebarStart from "./components/layout/sidebar-start/SidebarStart";
 
 function App() {
   return (
     <BrowserRouter>
       <NavigationBar />
-      <Sidebar />
+      <SidebarStart />
       <Content>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<StartPage />} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/impressum" element={<ImpressumPage />} />
           <Route path="/login" element={<LogInPage />} />
           <Route path="/aboutme" element={<AboutMePage />} />
           <Route path="/todo" element={<ToDoPage />} />
           <Route path="/news&blog" element={<NewsPage />} />
+          <Route path="/user" element={<UserPage />} />
         </Routes>
       </Content>
       <Footer />
