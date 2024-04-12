@@ -18,9 +18,9 @@ import SidebarStart from "./components/layout/sidebar-start/SidebarStart";
 function App() {
   return (
     <BrowserRouter>
-      <NavigationBar />
+      <NavigationBar />   
       <SidebarStart />
-      <Content>
+      <Content>   
         <Routes>
           <Route path="/" element={<StartPage />} />
           <Route path="/home" element={<HomePage />} />
@@ -30,7 +30,6 @@ function App() {
           <Route path="/todo" element={<ToDoPage />} />
           <Route path="/news&blog" element={<NewsPage />} />
           <Route path="/user" element={<UserPage />} />
-        </Routes>
       </Content>
       <Footer />
     </BrowserRouter>
