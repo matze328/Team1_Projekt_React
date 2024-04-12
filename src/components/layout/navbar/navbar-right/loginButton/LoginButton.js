@@ -6,16 +6,16 @@ import StandardBtn from "../../../../common/buttons/standard-btn";
 //Aufgabe 2: useState für Login/Logged In nutzen
 //Macht es wie in Toms FollowBTN
 //Hier alternative Lösung!
-function LoginButton({ setIsLoggedIn, isLoggedIn }) {
+function LoginButton({ setIsLoggedIn, isLoggedIn  }) {
   //   const [isLoggedIn, setIsLoggedIn] = useState(false);
   //Ich bereite 2 Variablen vor. Eine soll den Text, die andere die
   //passende onClick Function beinhalten
   let logInText = "";
   let onClick;
+  const redirectToLogin = () => {
+    window.location.href = "http://localhost:3000/login";
+  };
 
-  function setIsLoggedInTrue() {
-    setIsLoggedIn(true);
-  }
   function setIsLoggedInFalse() {
     setIsLoggedIn(false);
   }
@@ -26,7 +26,8 @@ function LoginButton({ setIsLoggedIn, isLoggedIn }) {
     onClick = setIsLoggedInFalse;
   } else {
     logInText = "LogIn";
-    onClick = setIsLoggedInTrue;
+    onClick = redirectToLogin;
+    
   }
   return <StandardBtn text={logInText} onClick={onClick} />;
 }

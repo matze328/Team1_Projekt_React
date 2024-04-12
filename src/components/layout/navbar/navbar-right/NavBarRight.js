@@ -5,14 +5,12 @@ import { useState } from "react";
 
 function NavBarRight() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const redirectToLogin = () => {
-    window.location.href = "http://localhost:3000/login";
-  };
+ 
   if (!isLoggedIn) {
     return (
       <div className={styles.mainContainer}>
         <LoginButton
-          onClick={redirectToLogin}
+          
           isLoggedIn={isLoggedIn}
           setIsLoggedIn={setIsLoggedIn}
         />
@@ -24,7 +22,7 @@ function NavBarRight() {
     return (
       <div className={styles.mainContainer}>
         <LoginButton
-          onClick={redirectToLogin}
+        
           isLoggedIn={isLoggedIn}
           setIsLoggedIn={setIsLoggedIn}
         />
