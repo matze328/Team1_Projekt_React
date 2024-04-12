@@ -4,7 +4,7 @@ import LoginButton from "./loginButton/LoginButton";
 import { useState } from "react";
 
 function NavBarRight() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const redirectToLogin = () => {
     window.location.href = "http://localhost:3000/login";
   };
