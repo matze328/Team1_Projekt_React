@@ -30,6 +30,7 @@ function App() {
           <Route path="/todo" element={<ToDoPage />} />
           <Route path="/news&blog" element={<NewsPage />} />
           <Route path="/user" element={<UserPage />} />
+        </Routes>  
       </Content>
       <Footer />
     </BrowserRouter>
