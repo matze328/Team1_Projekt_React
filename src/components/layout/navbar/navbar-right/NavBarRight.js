@@ -5,7 +5,9 @@ import { useState } from "react";
 
 function NavBarRight() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
- 
+  const redirectToSignUp = () => {
+    window.location.href = "http://localhost:3000/signup";
+  };
   if (!isLoggedIn) {
     return (
       <div className={styles.mainContainer}>
@@ -15,7 +17,7 @@ function NavBarRight() {
           setIsLoggedIn={setIsLoggedIn}
         />
         <div className={styles.spacer} />
-        <StandardBtn text={"SignUp"} />
+        <StandardBtn text={"SignUp"} onClick={redirectToSignUp}  />
       </div>
     );
   } else {
