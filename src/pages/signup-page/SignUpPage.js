@@ -21,13 +21,18 @@ function SignUpPage() {
   return (
     <div className={styles.outerContainer}>
     <div className={styles.innerContainer}>
-    
+     <label>Bitte gib hier dein Username an </label>
       <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
-      <input type="text" placeholder="Vorname" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+      <label>Bitte gib hier dein Vornamen an </label>
+      <input type="text" placeholder="Vorname" value={firstName} onChange={(e) => setFirstName(e.target.value)} />  
+       <label>Bitte gib hier dein Nachname an </label>
       <input type="text" placeholder="Nachname" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+      <label>Bitte gib hier deine E-Mail an </label>
       <input type="email" placeholder="E-Mail Adresse" value={email} onChange={(e) => setEmail(e.target.value)} />
+      <label>Bitte gib hier dein Passwort an </label>
       <input type="password" placeholder="Passwort" value={password} onChange={(e) => setPassword(e.target.value)} />
-
+      <label>Bitte bestätige dein Passwort nochmal </label>
+      <input type="password" placeholder="Passwort" value={password} onChange={(e) => setPassword(e.target.value)} />
       <StandardBtn text={"Bestätigen"}onClick={handleConfirm} />
       <StandardBtn text={"Abbrechen"}onClick={handleCancel} />
     </div>
