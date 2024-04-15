@@ -10,6 +10,7 @@ function Sidebar() {
   const redirectToUserPage = () => {
     window.location.href = "http://localhost:3000/user";
   };
+
   return (
     <div className={styles.mainContainer}>
       <img

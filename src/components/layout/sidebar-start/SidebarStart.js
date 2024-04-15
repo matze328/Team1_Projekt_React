@@ -7,6 +7,9 @@ function SidebarStart() {
   const redirectToNewsPage = () => {
     window.location.href = "http://localhost:3000/news&blog";
   };
+  const redirectToRadioPage = () => {
+    window.location.href = "http://localhost:3000/radio";
+  };
   // const redirectToUserPage = () => {
   //   window.location.href = "http://localhost:3000/user";
   // };
@@ -23,7 +26,11 @@ function SidebarStart() {
         <IoStarOutline className={styles.icon} size={80} />
       </div> */}
       <div className={styles.iconContainer}>
-        <PiRadio className={styles.icon} size={80} />
+        <PiRadio
+          className={styles.icon}
+          onClick={redirectToRadioPage}
+          size={80}
+        />
       </div>
       <div
         className={styles.iconContainerNews}

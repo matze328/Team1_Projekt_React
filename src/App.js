@@ -14,13 +14,14 @@ import LogInPage from "./pages/login-page";
 import UserPage from "./pages/user-page";
 import StartPage from "./pages/start-page";
 import SidebarStart from "./components/layout/sidebar-start/SidebarStart";
+import RadioPage from "./pages/radio-page";
 
 function App() {
   return (
     <BrowserRouter>
-      <NavigationBar />   
+      <NavigationBar />
       <SidebarStart />
-      <Content>   
+      <Content>
         <Routes>
           <Route path="/" element={<StartPage />} />
           <Route path="/home" element={<HomePage />} />
@@ -28,9 +29,10 @@ function App() {
           <Route path="/login" element={<LogInPage />} />
           <Route path="/aboutme" element={<AboutMePage />} />
           <Route path="/todo" element={<ToDoPage />} />
+          <Route path="/radio" element={<RadioPage />} />
           <Route path="/news&blog" element={<NewsPage />} />
           <Route path="/user" element={<UserPage />} />
-        </Routes>  
+        </Routes>
       </Content>
       <Footer />
     </BrowserRouter>
