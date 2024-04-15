@@ -7,12 +7,17 @@ function FooterRight() {
   return (
     <div className={styles.mainContainer}> 
      <div className={styles.spacer} />
+     <a href="https://twitter.com">
       <RiTwitterXLine className={styles.social} /> 
-      <div className={styles.spacer} />      
+      </a>
+      <div className={styles.spacer} /> 
+      <a href="https://instagram.com">     
       <PiInstagramLogoBold className={styles.social} /> 
+      </a>
       <div className={styles.spacer} />
+      <a href="https://facebook.com">
       <PiFacebookLogo className={styles.social} />
-    
+      </a>
     </div>
   );
 }
