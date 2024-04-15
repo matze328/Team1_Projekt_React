@@ -33,8 +33,10 @@ function SignUpPage() {
       <input type="password" placeholder="Passwort" value={password} onChange={(e) => setPassword(e.target.value)} />
       <label>Bitte bestätige dein Passwort nochmal </label>
       <input type="password" placeholder="Passwort" value={password} onChange={(e) => setPassword(e.target.value)} />
+      <div className={styles.button} >
       <StandardBtn text={"Bestätigen"}onClick={handleConfirm} />
       <StandardBtn text={"Abbrechen"}onClick={handleCancel} />
+      </div>
     </div>
     </div>
     
