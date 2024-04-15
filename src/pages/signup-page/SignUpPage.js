@@ -12,14 +12,11 @@ function SignUpPage({ history }) {
   const [password, setPassword] = useState("");
 
   const handleConfirm = () => {
-    // Validierung der Eingabefelder hier
-
-    // Navigieren zur Homepage
-    history.push("/home");
+    window.location.href = "http://localhost:3000/user";
   };
 
   const handleCancel = () => {
-    history.push("/");
+    window.location.href = "http://localhost:3000/";
   };
 
   return (
