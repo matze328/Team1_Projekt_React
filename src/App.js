@@ -16,6 +16,8 @@ import StartPage from "./pages/start-page";
 import SidebarStart from "./components/layout/sidebar-start/SidebarStart";
 import RadioPage from "./pages/radio-page";
 import SignUpPage from "./pages/signup-page";
+import Datenschutz from "./pages/impressum-page/datenschutz";
+import RechtlicheHinweise from "./pages/impressum-page/RechtlicheHinweise.js";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route path="/" element={<StartPage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/impressum" element={<ImpressumPage />} />
+          <Route path="/datenschutz" element={<Datenschutz />} />
+          <Route path="/RechtlicheHinweise" element={<RechtlicheHinweise />} />
           <Route path="/login" element={<LogInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/aboutme" element={<AboutMePage />} />

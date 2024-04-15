@@ -1,4 +1,5 @@
 import styles from "./ImpressumPage.module.css";
+import { Link } from "react-router-dom"; // Importieren Sie Link von react-router-dom
 
 function ImpressumPage() {
   return (
@@ -15,15 +16,10 @@ function ImpressumPage() {
           E-Mail: Deine E-Mail<br />
         </p>
 
-        <h2>Rechtliche Hinweise:</h2>
-        <p>
-          Hier kannst du rechtliche Hinweise und Informationen zu Urheberrechten, Haftungsausschluss usw. hinzufügen.
-        </p>
+        <h2><Link to="/RechtlicheHinweise">Rechtliche Hinweise</Link></h2>
 
-        <h2>Datenschutz:</h2>
-        <p>
-          Informationen zur Datenschutzerklärung und zum Umgang mit persönlichen Daten können hier hinzugefügt werden.
-        </p>
+
+        <h2><Link to="/datenschutz">Datenschutz</Link></h2>
       </div>
     </div>
   );
