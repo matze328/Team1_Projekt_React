@@ -1,46 +1,42 @@
 import styles from "./SignUpPage.module.css";
-import { useState } from "react";
 // import { useHistory } from "react-router-dom";
 import { UserDataGuest } from "../../api/userData/UserDataGuest";
 
-function SignUpPage() {
+import React, { useState } from "react";
+
+function SignUpPage({ history }) {
+  const [username, setUsername] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //   const history = useHistory();
 
-  console.log(UserDataGuest);
+  const handleConfirm = () => {
+    // Validierung der Eingabefelder hier
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // Hier können Sie die Logik für die Anmeldung implementieren, z.B. API-Aufruf zur Überprüfung der Anmeldeinformationen
-    // history.push("/home");
-    if (email == UserDataGuest.email && password == UserDataGuest.password) {
-      console.log(email, password);
-    }
+    // Navigieren zur Homepage
+    history.push("/home");
   };
+
+  const handleCancel = () => {
+    history.push("/");
+  };
+
   return (
-    <div className={styles.mainContainer}>
-      <form onSubmit={handleLogin}>
-        <label>Email: </label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <br />
-        <label>Password: </label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <br />
-        <button type="submit">Login</button>
-      </form>
+    <div className={styles.outerContainer}>
+    <div className={styles.innerContainer}>
+    <div>
+      <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+      <input type="text" placeholder="Vorname" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+      <input type="text" placeholder="Nachname" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+      <input type="email" placeholder="E-Mail Adresse" value={email} onChange={(e) => setEmail(e.target.value)} />
+      <input type="password" placeholder="Passwort" value={password} onChange={(e) => setPassword(e.target.value)} />
+
+      <button onClick={handleConfirm}>Bestätigen</button>
+      <button onClick={handleCancel}>Abbrechen</button>
+    </div>
+    </div>
     </div>
   );
 }
-
 export default SignUpPage;
