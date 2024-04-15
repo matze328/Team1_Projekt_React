@@ -1,31 +1,46 @@
+import StandardBtn from "../../components/common/buttons/standard-btn";
+import UserContext from "../../components/common/userContext";
 import styles from "./LogInPage.module.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 // import { useHistory } from "react-router-dom";
-import { UserDataGuest } from "../../api/userData/UserDataGuest";
 
 function LogInPage() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+
   const [password, setPassword] = useState("");
+  const { users } = useContext(UserContext);
+  const navigate = useNavigate();
   //   const history = useHistory();
 
-  console.log(UserDataGuest);
+  console.log(users);
 
   const handleLogin = (e) => {
     e.preventDefault();
     // Hier können Sie die Logik für die Anmeldung implementieren, z.B. API-Aufruf zur Überprüfung der Anmeldeinformationen
     // history.push("/home");
-    if (email == UserDataGuest.email && password == UserDataGuest.password) {
-      console.log(email, password);
+    const founduser = users.find((user) => user.username === username);
+    if (founduser) {
+      if (password == founduser.password) {
+        console.log("Du bist angemeldet.");
+        navigate("/home");
+        // hier: navigiere zu Homepage
+      } else {
+        console.log("FEHLER: PASSWORD");
+      }
+    } else {
+      console.log("FEHLER: USER");
     }
   };
   return (
     <div className={styles.mainContainer}>
       <form onSubmit={handleLogin}>
-        <label>Email: </label>
+        <label>Username: </label>
         <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           required
         />
         <br />
@@ -37,7 +52,7 @@ function LogInPage() {
           required
         />
         <br />
-        <button type="submit">Login</button>
+        <StandardBtn text={"bestätigen"} onClick={handleLogin} />{" "}
       </form>
     </div>
   );

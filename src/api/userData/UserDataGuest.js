@@ -1,6 +1,18 @@
 export const UserDataGuest = [
   {
-    email: "testmail@gmail.com",
+    username: "jane",
     password: "testing",
+  },
+  {
+    username: "joe",
+    password: "tasting",
+  },
+  {
+    username: "bob",
+    password: "teasting",
+  },
+  {
+    username: "bean",
+    password: "toasting",
   },
 ];
