@@ -1,10 +1,9 @@
+import StandardBtn from "../../components/common/buttons/standard-btn";
 import styles from "./SignUpPage.module.css";
-// import { useHistory } from "react-router-dom";
-import { UserDataGuest } from "../../api/userData/UserDataGuest";
 
 import React, { useState } from "react";
 
-function SignUpPage({ history }) {
+function SignUpPage() {
   const [username, setUsername] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -22,18 +21,18 @@ function SignUpPage({ history }) {
   return (
     <div className={styles.outerContainer}>
     <div className={styles.innerContainer}>
-    <div>
+    
       <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
       <input type="text" placeholder="Vorname" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
       <input type="text" placeholder="Nachname" value={lastName} onChange={(e) => setLastName(e.target.value)} />
       <input type="email" placeholder="E-Mail Adresse" value={email} onChange={(e) => setEmail(e.target.value)} />
       <input type="password" placeholder="Passwort" value={password} onChange={(e) => setPassword(e.target.value)} />
 
-      <button onClick={handleConfirm}>Bestätigen</button>
-      <button onClick={handleCancel}>Abbrechen</button>
+      <StandardBtn text={"Bestätigen"}onClick={handleConfirm} />
+      <StandardBtn text={"Abbrechen"}onClick={handleCancel} />
     </div>
     </div>
-    </div>
+    
   );
 }
 export default SignUpPage;
