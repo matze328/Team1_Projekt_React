@@ -16,11 +16,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: calc(
+    100% - 40px
+  ); /* Reduziert die Breite um 40px (20px auf jeder Seite) */
+  height: calc(
+    100% - 40px
+  ); /* Reduziert die Höhe um 40px (20px auf jeder Seite) */
   border-radius: 16px;
   background-color: rgba(255, 255, 255, 0.15);
   color: rgb(150, 150, 140);
+  padding: 20px; /* Hinzugefügt */
 }
 
 h1,
