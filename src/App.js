@@ -19,6 +19,7 @@ import SignUpPage from "./pages/signup-page";
 import Datenschutz from "./pages/impressum-page/datenschutz";
 import RechtlicheHinweise from "./pages/impressum-page/RechtlicheHinweise.js";
 import FavoritenPage from "./pages/favoriten-page";
+import AccountPage from "./pages/account-page";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="/news&blog" element={<NewsPage />} />
           <Route path="/user" element={<UserPage />} />
           <Route path="/favoriten" element={<FavoritenPage />} />
+          <Route path="/account" element={<AccountPage />} />
         </Routes>
       </Content>
       <Footer />

@@ -48,6 +48,23 @@
     border-color: var(--primary-color);
   }
 }
+.iconContainerAccount {
+  background-image: url("../../../images/template-2.jpg");
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid;
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  margin-top: 4px;
+  border-color: white;
+  &:hover {
+    border-color: var(--primary-color);
+  }
+}
 
 .icon {
   color: white;

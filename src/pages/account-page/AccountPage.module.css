@@ -1,0 +1,11 @@
+.mainContainer {
+  background-color: rgba(172, 78, 201, 0.725);
+}
+
+.playlist {
+  display: flex;
+  justify-content: flex-end;
+  /* margin-right: 130px; */
+  margin-top: 104px;
+  margin-bottom: 4px;
+}
