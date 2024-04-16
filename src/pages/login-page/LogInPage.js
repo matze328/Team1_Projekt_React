@@ -22,7 +22,7 @@ function LogInPage() {
     // history.push("/home");
     const founduser = users.find((user) => user.username === username);
     if (founduser) {
-      if (password == founduser.password) {
+      if (password === founduser.password) {
         console.log("Du bist angemeldet.");
         navigate("/home");
         // hier: navigiere zu Homepage
