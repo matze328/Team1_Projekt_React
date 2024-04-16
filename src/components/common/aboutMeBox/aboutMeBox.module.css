@@ -1,29 +1,34 @@
-.mainContainer {
+.outerContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* width: 60vw; */
-    margin-left:  280px;
-    margin-right: 280px;
-   margin-top: 104px;
-}
- .unterContainer {
+    width: 60vw;
+    margin: 0px 280px;
+    border-radius: 16px;
+    border: 3px solid lightgrey;
+    backdrop-filter: blur(3px);
+    
+    
+  }
+  
+  .innerContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: calc(
       100% - 40px
-    ); 
-  border-radius: 16px;
+    ); /* Reduziert die Breite um 40px (20px auf jeder Seite) */
+    height: calc(
+      100% - 40px
+    ); /* Reduziert die Höhe um 40px (20px auf jeder Seite) */
+    border-radius: 16px;
     background-color: rgba(255, 255, 255, 0.15);
     color: rgb(150, 150, 140);
     padding: 20px; /* Hinzugefügt */
+    text-align: center;
   }
-    
-  
-  
   p {
     color: rgb(250, 250, 240);
   }
