@@ -38,19 +38,22 @@ function LogInPage() {
   };
   return (
     <div className={styles.outerContainer}>
-    <div className={styles.innerContainer}>
-      <form onSubmit={handleLogin}>
+    <div className={styles.innerContainer}> 
+    <br />
         <label>Username:</label>
         <input
+        className={styles.input}
+         onSubmit={handleLogin}
          placeholder="Username"
           type="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
         />
-        <br />
+       
         <label>Password: </label>
         <input
+         className={styles.input}
         placeholder="Password"
           type="password"
           value={password}
@@ -62,7 +65,7 @@ function LogInPage() {
         <StandardBtn text={"bestätigen"} onClick={handleLogin} />{" "}
         <StandardBtn text={"Abbrechen"}onClick={handleCancel} />
         </div>
-      </form>
+        <br />
     </div>
     </div>
   );
