@@ -1,26 +1,37 @@
 import styles from "./AboutMePage.module.css";
-
+import React from "react";
+import AboutMeBox from "../../components/common/aboutMeBox";
 function AboutMePage() {
   return (
-    <div className={styles.mainContainer}>
-      <div className={styles.unterContainer}>
-        <img className={styles.profileImage} src="person1.jpg" alt="Person 1" />
-        <p>Person 1 - This is about me</p>
-      </div>
-      <div className={styles.unterContainer}>
-        <img className={styles.profileImage} src="person2.jpg" alt="Person 2" />
-        <p>Person 2 - This is about me</p>
-      </div>
-      <div className={styles.unterContainer}>
-        <img className={styles.profileImage} src="person3.jpg" alt="Person 3" />
-        <p>Person 3 - This is about me</p>
-      </div>
-      <div className={styles.unterContainer}>
-        <img className={styles.profileImage} src="person4.jpg" alt="Person 4" />
-        <p>Person 4 - This is about me</p>
-      </div>
+
+   <div className={styles.mainContainer}>  
+     <AboutMeBox 
+     vorname ="Marcel"
+     nachname="Büscher"
+     persoInfo= "Ich bin ein leidenschaftlicher Entwickler und liebe es, kreative Lösungen zu finden."
+     hobbies="In meiner Freizeit fahre ich Downhill und Freeride."
+     />
+     
+       <AboutMeBox    
+        vorname="Person 2"
+        nachname="This is about me"
+        hobbies="Hobby 3, Hobby 4"
+      />
+      <AboutMeBox
+        vorname="Person 3"
+        nachname="This is about me"
+        hobbies="Hobby 5, Hobby 6"
+      />
+      <AboutMeBox
+        vorname="Person 4"
+        nachname="This is about me"
+        hobbies="Hobby 7, Hobby 8"
+      />
     </div>
   );
 }
+
+
+
 
 export default AboutMePage;
