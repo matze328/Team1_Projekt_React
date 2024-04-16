@@ -6,7 +6,6 @@ import Searchbar from "./searchbar/index";
 function NavigationBar() {
   // const [isLoggedIn, setIsLoggedIn] = useState(true);
 
-
   return (
     <div className={`${styles.mainContainer} border-bottom-shadow`}>
       <NavBarLeft />
