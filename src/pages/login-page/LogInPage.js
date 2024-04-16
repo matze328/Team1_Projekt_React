@@ -33,11 +33,16 @@ function LogInPage() {
       console.log("FEHLER: USER");
     }
   };
+  const handleCancel = () => {
+    window.location.href = "http://localhost:3000/";
+  };
   return (
-    <div className={styles.mainContainer}>
+    <div className={styles.outerContainer}>
+    <div className={styles.innerContainer}>
       <form onSubmit={handleLogin}>
-        <label>Username: </label>
+        <label>Username:</label>
         <input
+         placeholder="Username"
           type="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
@@ -46,14 +51,19 @@ function LogInPage() {
         <br />
         <label>Password: </label>
         <input
+        placeholder="Password"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
         <br />
+        <div className={styles.button} >
         <StandardBtn text={"bestätigen"} onClick={handleLogin} />{" "}
+        <StandardBtn text={"Abbrechen"}onClick={handleCancel} />
+        </div>
       </form>
+    </div>
     </div>
   );
 }
