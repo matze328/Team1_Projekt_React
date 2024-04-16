@@ -1,2 +1,35 @@
 .mainContainer {
+  display: flex;
+  flex-direction: row; /* geändert von column zu row */
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Hinzugefügt, um den Inhalt bei Bedarf umzubrechen */
+  margin-left: 280px;
+  margin-right: 280px;
+  margin-top: 124px; /* erhöht von 104px auf 124px */
+}
+
+.unterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: calc(
+    50% - 40px
+  ); /* geändert von 25% zu 50%, um zwei Boxen nebeneinander zu haben */
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: rgb(150, 150, 140);
+  padding: 20px;
+  margin: 10px; /* Hinzugefügt, um Platz zwischen den Boxen zu lassen */
+  border: 3px solid white; /* Hinzugefügt, um einen weißen Rand hinzuzufügen */
+}
+
+p {
+  color: rgb(250, 250, 240);
+}
+
+.profileImage {
+  width: 200px;
+  border-radius: 50%;
 }
