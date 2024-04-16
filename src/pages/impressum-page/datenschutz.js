@@ -1,7 +1,8 @@
 
 import React from 'react';
 import styles from "./ImpressumPage.module.css";
-
+import { Link } from 'react-router-dom';
+import buttonStyles from "./ButtonStyles.module.css";
 
 
 function Datenschutz() {
@@ -34,6 +35,11 @@ function Datenschutz() {
                 <p>
                     Sie haben jederzeit das Recht unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung, Sperrung oder Löschung dieser Daten zu verlangen. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
                 </p>
+                <Link to="/impressum">
+                    <button type="button" className={buttonStyles.button}>
+                        Zurück Impressum
+                    </button>
+                </Link>
             </div>
         </div>
     );

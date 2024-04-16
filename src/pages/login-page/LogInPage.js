@@ -38,35 +38,35 @@ function LogInPage() {
   };
   return (
     <div className={styles.outerContainer}>
-    <div className={styles.innerContainer}> 
-    <br />
+      <div className={styles.innerContainer}>
+        <br />
         <label>Username:</label>
         <input
-        className={styles.input}
-         onSubmit={handleLogin}
-         placeholder="Username"
+          className={styles.input}
+          onSubmit={handleLogin}
+          placeholder="Username"
           type="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
         />
-       
+
         <label>Password: </label>
         <input
-         className={styles.input}
-        placeholder="Password"
+          className={styles.input}
+          placeholder="Password"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
         <br />
-        <div className={styles.button} >
-        <StandardBtn text={"bestätigen"} onClick={handleLogin} />{" "}
-        <StandardBtn text={"Abbrechen"}onClick={handleCancel} />
+        <div className={styles.button}>
+          <StandardBtn text={"Bestätigen"} onClick={handleLogin} />{" "}
+          <StandardBtn text={"Abbrechen"} onClick={handleCancel} />
         </div>
         <br />
-    </div>
+      </div>
     </div>
   );
 }

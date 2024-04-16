@@ -18,6 +18,7 @@ import RadioPage from "./pages/radio-page";
 import SignUpPage from "./pages/signup-page";
 import Datenschutz from "./pages/impressum-page/datenschutz";
 import RechtlicheHinweise from "./pages/impressum-page/RechtlicheHinweise.js";
+import FavoritenPage from "./pages/favoriten-page";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/radio" element={<RadioPage />} />
           <Route path="/news&blog" element={<NewsPage />} />
           <Route path="/user" element={<UserPage />} />
+          <Route path="/favoriten" element={<FavoritenPage />} />
         </Routes>
       </Content>
       <Footer />

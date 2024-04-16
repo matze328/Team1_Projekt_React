@@ -3,6 +3,7 @@ import React from "react";
 import AboutMeBox from "../../components/common/aboutMeBox";
 function AboutMePage() {
   return (
+
    <div className={styles.mainContainer}>  
      <AboutMeBox 
      vorname ="Marcel"

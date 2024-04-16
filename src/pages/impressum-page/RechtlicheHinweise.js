@@ -1,5 +1,7 @@
 import styles from "./ImpressumPage.module.css";
 import React from 'react';
+import { Link } from 'react-router-dom';
+import buttonStyles from "./ButtonStyles.module.css";
 
 function RechtlicheHinweise() {
     return (
@@ -21,6 +23,11 @@ function RechtlicheHinweise() {
                 <p>
                     Die auf dieser Website veröffentlichten Inhalte unterliegen dem deutschen Urheber- und Leistungsschutzrecht. Jede vom deutschen Urheber- und Leistungsschutzrecht nicht zugelassene Verwertung bedarf der vorherigen schriftlichen Zustimmung des Anbieters oder jeweiligen Rechteinhabers.
                 </p>
+                <Link to="/impressum">
+                    <button type="button" className={buttonStyles.button}>
+                        Zurück zum Impressum
+                    </button>
+                </Link>
             </div>
         </div>
     );

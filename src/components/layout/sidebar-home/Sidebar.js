@@ -10,6 +10,9 @@ function Sidebar() {
   const redirectToUserPage = () => {
     window.location.href = "http://localhost:3000/user";
   };
+  const redirectToFavoritenPage = () => {
+    window.location.href = "http://localhost:3000/favoriten";
+  };
 
   return (
     <div className={styles.mainContainer}>
@@ -20,7 +23,7 @@ function Sidebar() {
         className={styles.iconContainer}
         size={80}
       />
-      <div className={styles.iconContainer}>
+      <div className={styles.iconContainer} onClick={redirectToFavoritenPage}>
         <IoStarOutline className={styles.icon} size={80} />
       </div>
       <div className={styles.iconContainer}>
