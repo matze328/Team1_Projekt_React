@@ -25,7 +25,7 @@ function StartPage() {
       <div className={styles.playlist}>
         <SidebarPlaylist />
       </div>
-      <AudioPlayer />
+      <AudioPlayer autoPlay src={chill} onPlay={(e) => console.log("onPlay")} />
       <ReactAudioPlayer src={chill} autoPlay controls />
       <ReactPlayer url="https://soundcloud.com/balyntmusic/balynt-chase-the-sundown-buy-free-download-no-copyright-petit-biscuit-style?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" />
     </>
