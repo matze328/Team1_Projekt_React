@@ -20,118 +20,69 @@ function AccountPage() {
         <Sidebar />
       </div>
       <div className={styles.outerContainer}>
-        <div className={styles.div1}>
-          <h2>USER</h2>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="username">Username:</label>
-              <input
-                type="text"
-                // id="username"
-                name={UserDataGuest.currentUsername}
-                // value={faker.internet.userName()}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="firstName">First Name:</label>
-              <input
-                type="text"
-                id="firstName"
-                name="firstName"
-                value={faker.person.firstName}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="lastName">Last Name:</label>
-              <input
-                type="text"
-                id="lastName"
-                name="lastName"
-                value={faker.person.lastName}
-                onChange={handleChange}
-              />
-            </div>
+        <div className={styles.innerContainer}>
+          <div className={styles.labelContainer}>
+            <label>USER</label>
+            <label>Username:</label>
+            <label>First Name:</label>
+            <label>Last Name:</label>
+            <label>PASSWORD</label>
+            <label>Current Password:</label>
+
             {/* Profilbild einfügen */}
-          </form>
-        </div>
-        <div className={styles.div2}>
-          <h2>PASSWORD</h2>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="currentPassword">Current Password:</label>
-              <input
-                type="password"
-                id="currentPassword"
-                name="currentPassword"
-                value={UserDataGuest.currentPassword}
-                onChange={handleChange}
-              />
+          </div>
+          <div className={styles.contentContainer}>
+            <div className={styles.userInfo}>
+              <label>jane</label>
+              <label>jane</label>
+              <label>doe</label>
             </div>
-            <div>
-              <label htmlFor="newPassword">New Password:</label>
-              <input
-                type="password"
-                id="newPassword"
-                name="newPassword"
-                value={UserDataGuest.newPassword}
-                onChange={handleChange}
-              />
+            <div className={styles.passwordInfo}>
+              <label>testing</label>
             </div>
-            <div>
-              <label htmlFor="repeatNewPassword">Repeat New Password:</label>
-              <input
-                type="password"
-                id="repeatNewPassword"
-                name="repeatNewPassword"
-                value={UserDataGuest.repeatNewPassword}
-                onChange={handleChange}
-              />
-            </div>
-          </form>
-        </div>
-        <div className={styles.div3}>
-          <h2>PROFILE SETTINGS | PERSONALIZE PROFILE</h2>
-          {/* Logik für das Click-Event implementieren */}
-        </div>
-        <div className={styles.div4}>
-          <h2>DELETE ACCOUNT</h2>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="deleteUsername">Username:</label>
-              <input
-                type="text"
-                id="deleteUsername"
-                name="deleteUsername"
-                value={UserDataGuest.username}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="deleteCurrentPassword">Current Password:</label>
-              <input
-                type="password"
-                id="deleteCurrentPassword"
-                name="deleteCurrentPassword"
-                value={UserDataGuest.currentPassword}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="deleteRepeatCurrentPassword">
-                Repeat Current Password:
-              </label>
-              <input
-                type="password"
-                id="deleteRepeatCurrentPassword"
-                name="deleteRepeatCurrentPassword"
-                value={UserDataGuest.currentPassword}
-                onChange={handleChange}
-              />
-            </div>
-            <button type="submit">DELETE ACCOUNT</button>
-          </form>
+          </div>
+          <div className={styles.settingsContainer}>
+            <label>PROFILE SETTINGS | PERSONALIZE PROFILE</label>
+            {/* Logik für das Click-Event implementieren */}
+          </div>
+          <div className={styles.deleteContainer}>
+            <label>DELETE ACCOUNT</label>
+            <form onSubmit={handleSubmit}>
+              <div>
+                <label htmlFor="deleteUsername">Username:</label>
+                <input
+                  type="text"
+                  id="deleteUsername"
+                  name="deleteUsername"
+                  value={UserDataGuest.username}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="deleteCurrentPassword">Current Password:</label>
+                <input
+                  type="password"
+                  id="deleteCurrentPassword"
+                  name="deleteCurrentPassword"
+                  value={UserDataGuest.currentPassword}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="deleteRepeatCurrentPassword">
+                  Repeat Current Password:
+                </label>
+                <input
+                  type="password"
+                  id="deleteRepeatCurrentPassword"
+                  name="deleteRepeatCurrentPassword"
+                  value={UserDataGuest.currentPassword}
+                  onChange={handleChange}
+                />
+              </div>
+              <button type="submit">DELETE ACCOUNT</button>
+            </form>
+          </div>
         </div>
       </div>
     </>
