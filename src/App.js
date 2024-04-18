@@ -19,7 +19,8 @@ import SignUpPage from "./pages/signup-page";
 import Datenschutz from "./pages/impressum-page/datenschutz";
 import RechtlicheHinweise from "./pages/impressum-page/RechtlicheHinweise.js";
 import FavoritenPage from "./pages/favoriten-page";
-import AccountPage from "./pages/account-page";
+import AccountPage from "./pages/account-page/AccountPage.js";
+import ProfileSettings from "./pages/account-page/ProfileSettings.js";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route path="/user" element={<UserPage />} />
           <Route path="/favoriten" element={<FavoritenPage />} />
           <Route path="/account" element={<AccountPage />} />
+          <Route path="/profileSettings" element={<ProfileSettings />} />
         </Routes>
       </Content>
       <Footer />

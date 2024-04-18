@@ -6,6 +6,8 @@ import SidebarPlaylist from "../../components/layout/sidebar-playlist";
 import Sidebar from "../../components/layout/sidebar-home/Sidebar";
 import { faker } from "@faker-js/faker";
 import { UserDataGuest } from "../../api/userData/UserDataGuest";
+// import { ProfileSettings } from "../../pages/account-page/ProfileSettings";
+import { Link } from "react-router-dom";
 
 // const currentUsername = username;
 // const currentPassword = password;
@@ -61,7 +63,9 @@ function AccountPage() {
             </div>
             <div className={styles.secondHeaderContainer}>
               <label className={styles.ProfileSettingPositionContainer}>
-                PROFILE SETTINGS | PERSONALISE PROFILE
+                <Link to="/profileSettings">
+                  PROFILE SETTINGS | PERSONALISE PROFILE
+                </Link>
               </label>
             </div>
             <div className={styles.secondHeaderContainer}>
