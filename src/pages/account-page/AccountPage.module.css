@@ -71,6 +71,12 @@
   flex-direction: column;
 }
 
-.ProfileSettingPositionContainer {
+.ProfileSettingPositionContainer a {
   padding: 10px;
+  color: #00ff00; /* Farbe des Links im unberührten Zustand */
+  text-decoration: none; /* Entfernt die Standard-Unterstreichung des Links */
+  transition: color 0.3s ease; /* Fügt eine sanfte Übergangseffekt für die Farbänderung hinzu */
+}
+.ProfileSettingPositionContainer :hover {
+  color: cornflowerblue; /* Farbe des Links beim Hovern */
 }
