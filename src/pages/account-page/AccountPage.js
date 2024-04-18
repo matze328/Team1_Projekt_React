@@ -26,47 +26,53 @@ function AccountPage() {
               <label>ACCOUNT</label>
             </div>
             <div className={styles.secondHeaderContainer}>
-              {/* <label>USER</label> */}
               <div className={styles.labelContainer}>
+                <label>USER</label>
                 <label>Username:</label>
                 <label>First Name:</label>
                 <label>Last Name:</label>
               </div>
               <div className={styles.infoContainer}>
+                <br></br>
                 <label>jane</label>
                 <label>jane</label>
                 <label>doe</label>
               </div>
             </div>
             <div className={styles.secondHeaderContainer}>
-              {/* <label>EMAIL</label> */}
               <div className={styles.labelContainer}>
-                <label>Email:</label>
+                <label>E-MAIL</label>
+                <label>E-mail:</label>
               </div>
               <div className={styles.infoContainer}>
+                <br></br>
                 <label>mail@mail.de</label>
               </div>
             </div>
             <div className={styles.secondHeaderContainer}>
-              {/* <label>PASSWORD</label> */}
               <div className={styles.labelContainer}>
+                <label>PASSWORD</label>
                 <label>Current Password:</label>
               </div>
               <div className={styles.infoContainer}>
+                <br></br>
                 <label>sicheresPasswort</label>
               </div>
             </div>
             <div className={styles.secondHeaderContainer}>
-              {/* <label>PROFILE SETTINGS | PERSONALISE PROFILE</label> */}
+              <label className={styles.ProfileSettingPositionContainer}>
+                PROFILE SETTINGS | PERSONALISE PROFILE
+              </label>
             </div>
             <div className={styles.secondHeaderContainer}>
-              {/* <label>USER</label> */}
               <div className={styles.labelContainer}>
+                <label>DELETE ACCOUNT</label>
                 <label>Username:</label>
-                <label>First Name:</label>
-                <label>Last Name:</label>
+                <label>Current Password:</label>
+                <label>Repeat Current Cassword:</label>
               </div>
               <div className={styles.infoContainer}>
+                <br></br>
                 <input></input>
                 <input></input>
                 <input></input>

@@ -28,36 +28,6 @@
   padding: 20px; /* Hinzugefügt */
 }
 
-/* h1,
-h2 {
-  color: rgb(250, 250, 240);
-} */
-
-/* .userInfo { */
-/* Für alle relevanten Blöcke anwenden */
-/* display: flex;
-  flex-direction: column; Ändern der Orientierung */
-/* justify-content: space-between; Verteilt die Inhalte gleichmäßig */
-/* width: 100%; Nimmt die volle Breite des übergeordneten Containers ein */
-/* margin-top: 27px; */
-/* } */
-
-/* .passwordInfo { */
-/* Für alle relevanten Blöcke anwenden */
-/* display: flex; */
-/* flex-direction: column; Ändern der Orientierung */
-/* justify-content: space-between; Verteilt die Inhalte gleichmäßig */
-/* width: 100%; Nimmt die volle Breite des übergeordneten Containers ein */
-/* margin-top: 45px; */
-/* } */
-/* .labelContainer,
-.contentContainer { */
-/* flex: 1; Beide Container nehmen gleichen Raum ein */
-/* display: flex;
-  flex-direction: column;
-  padding: 10px;
-} */
-
 .contentContainer {
   display: flex;
   flex-direction: column;
@@ -76,6 +46,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row;
 }
 
 .labelContainer,
@@ -93,4 +64,13 @@ h2 {
 
 .infoContainer {
   flex-direction: column;
+}
+
+.headerPositionContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.ProfileSettingPositionContainer {
+  padding: 10px;
 }
