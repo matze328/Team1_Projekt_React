@@ -28,32 +28,69 @@
   padding: 20px; /* Hinzugefügt */
 }
 
-h1,
+/* h1,
 h2 {
   color: rgb(250, 250, 240);
-}
+} */
 
-.userInfo {
-  /* Für alle relevanten Blöcke anwenden */
-  display: flex;
-  flex-direction: column; /* Ändern der Orientierung */
-  justify-content: space-between; /* Verteilt die Inhalte gleichmäßig */
-  width: 100%; /* Nimmt die volle Breite des übergeordneten Containers ein */
-  margin-top: 27px;
-}
+/* .userInfo { */
+/* Für alle relevanten Blöcke anwenden */
+/* display: flex;
+  flex-direction: column; Ändern der Orientierung */
+/* justify-content: space-between; Verteilt die Inhalte gleichmäßig */
+/* width: 100%; Nimmt die volle Breite des übergeordneten Containers ein */
+/* margin-top: 27px; */
+/* } */
 
-.passwordInfo {
-  /* Für alle relevanten Blöcke anwenden */
-  display: flex;
-  flex-direction: column; /* Ändern der Orientierung */
-  justify-content: space-between; /* Verteilt die Inhalte gleichmäßig */
-  width: 100%; /* Nimmt die volle Breite des übergeordneten Containers ein */
-  margin-top: 45px;
-}
-.labelContainer,
-.contentContainer {
-  flex: 1; /* Beide Container nehmen gleichen Raum ein */
-  display: flex;
+/* .passwordInfo { */
+/* Für alle relevanten Blöcke anwenden */
+/* display: flex; */
+/* flex-direction: column; Ändern der Orientierung */
+/* justify-content: space-between; Verteilt die Inhalte gleichmäßig */
+/* width: 100%; Nimmt die volle Breite des übergeordneten Containers ein */
+/* margin-top: 45px; */
+/* } */
+/* .labelContainer,
+.contentContainer { */
+/* flex: 1; Beide Container nehmen gleichen Raum ein */
+/* display: flex;
   flex-direction: column;
   padding: 10px;
+} */
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.headerContainer,
+.secondHeaderContainer {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.secondHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.labelContainer,
+.infoContainer {
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+  padding: 10px;
+  text-align: left;
+}
+
+.labelContainer {
+  flex-direction: column;
+}
+
+.infoContainer {
+  flex-direction: column;
 }
