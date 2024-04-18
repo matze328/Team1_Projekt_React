@@ -8,7 +8,6 @@ import Content from "./components/layout/content";
 import AboutMePage from "./pages/aboutme-page";
 import Footer from "./components/layout/footer";
 import ToDoPage from "./pages/todo-page/";
-import Sidebar from "./components/layout/sidebar-home/Sidebar";
 import NewsPage from "./pages/news-page";
 import LogInPage from "./pages/login-page";
 import UserPage from "./pages/user-page";
@@ -25,7 +24,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavigationBar />
-      <SidebarStart />
+      {/* <SidebarStart /> */}
       <Content>
         <Routes>
           <Route path="/" element={<StartPage />} />

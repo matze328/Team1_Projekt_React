@@ -1,10 +1,10 @@
-import styles from "./Sidebar.module.css";
+import styles from "./SidebarHome.module.css";
 import { IoStarOutline } from "react-icons/io5";
 import { PiRadio } from "react-icons/pi";
 import { faker } from "@faker-js/faker";
 import { MdManageAccounts } from "react-icons/md";
 
-function Sidebar() {
+function SidebarHome() {
   const redirectToNewsPage = () => {
     window.location.href = "http://localhost:3000/news&blog";
   };
@@ -45,4 +45,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+export default SidebarHome;

@@ -1,3 +1,3 @@
-import Audioplayer from "Team1_Projekt_React/src/components/layout/audioplayer/Audioplayer.js";
+import Mp3player from "./Mp3player";
 
-export default Audioplayer;
+export default Mp3player;

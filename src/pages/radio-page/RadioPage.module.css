@@ -1,3 +1,12 @@
 .mainContainer {
   background-color: red;
 }
+
+.mediaplayer {
+  background-color: white;
+  overflow: hidden;
+  height: 250px;
+  width: 250px;
+  border-radius: 18px;
+  border: white solid 3px;
+}
