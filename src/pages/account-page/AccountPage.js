@@ -22,66 +22,80 @@ function AccountPage() {
       <div className={styles.outerContainer}>
         <div className={styles.innerContainer}>
           <div className={styles.labelContainer}>
-            <label>USER</label>
-            <label>Username:</label>
-            <label>First Name:</label>
-            <label>Last Name:</label>
-            <label>PASSWORD</label>
-            <label>Current Password:</label>
-
-            {/* Profilbild einfügen */}
-          </div>
-          <div className={styles.contentContainer}>
-            <div className={styles.userInfo}>
-              <label>jane</label>
-              <label>jane</label>
-              <label>doe</label>
+            <div>
+              ACCOUNT
+              <div>
+                <label>USER</label>
+              </div>
+              <label>Username:</label>
+              <label>First Name:</label>
+              <label>Last Name:</label>
+              <div>
+                <label>E-MAIL</label>
+              </div>
+              <label>E-Mail:</label>
+              <div>
+                <label>PASSWORD</label>
+              </div>
+              <label>Current Password:</label>
+              {/* Profilbild einfügen */}
             </div>
-            <div className={styles.passwordInfo}>
-              <label>testing</label>
+            <div className={styles.contentContainer}>
+              <div className={styles.userInfo}>
+                <label>jane</label>
+                <label>jane</label>
+                <label>doe</label>
+              </div>
+              <div className={styles.passwordInfo}>
+                <label>testing</label>
+              </div>
             </div>
-          </div>
-          <div className={styles.settingsContainer}>
-            <label>PROFILE SETTINGS | PERSONALIZE PROFILE</label>
-            {/* Logik für das Click-Event implementieren */}
-          </div>
-          <div className={styles.deleteContainer}>
-            <label>DELETE ACCOUNT</label>
-            <form onSubmit={handleSubmit}>
+            <div className={styles.settingsContainer}>
               <div>
-                <label htmlFor="deleteUsername">Username:</label>
-                <input
-                  type="text"
-                  id="deleteUsername"
-                  name="deleteUsername"
-                  value={UserDataGuest.username}
-                  onChange={handleChange}
-                />
+                <label>PROFILE SETTINGS | PERSONALIZE PROFILE</label>
               </div>
-              <div>
-                <label htmlFor="deleteCurrentPassword">Current Password:</label>
-                <input
-                  type="password"
-                  id="deleteCurrentPassword"
-                  name="deleteCurrentPassword"
-                  value={UserDataGuest.currentPassword}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <label htmlFor="deleteRepeatCurrentPassword">
-                  Repeat Current Password:
-                </label>
-                <input
-                  type="password"
-                  id="deleteRepeatCurrentPassword"
-                  name="deleteRepeatCurrentPassword"
-                  value={UserDataGuest.currentPassword}
-                  onChange={handleChange}
-                />
-              </div>
-              <button type="submit">DELETE ACCOUNT</button>
-            </form>
+              {/* Logik für das Click-Event implementieren */}
+            </div>
+            <div className={styles.deleteContainer}>
+              <label>DELETE ACCOUNT</label>
+              <form onSubmit={handleSubmit}>
+                <div>
+                  <label htmlFor="deleteUsername">Username:</label>
+                  <input
+                    type="text"
+                    id="deleteUsername"
+                    name="deleteUsername"
+                    value={UserDataGuest.username}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="deleteCurrentPassword">
+                    Current Password:
+                  </label>
+                  <input
+                    type="password"
+                    id="deleteCurrentPassword"
+                    name="deleteCurrentPassword"
+                    value={UserDataGuest.currentPassword}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="deleteRepeatCurrentPassword">
+                    Repeat Current Password:
+                  </label>
+                  <input
+                    type="password"
+                    id="deleteRepeatCurrentPassword"
+                    name="deleteRepeatCurrentPassword"
+                    value={UserDataGuest.currentPassword}
+                    onChange={handleChange}
+                  />
+                </div>
+                <button type="submit">DELETE ACCOUNT</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
