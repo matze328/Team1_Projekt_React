@@ -17,6 +17,9 @@ function SidebarHome() {
   const redirectToAccountPage = () => {
     window.location.href = "http://localhost:3000/account";
   };
+  const redirectToRadioPage = () => {
+    window.location.href = "http://localhost:3000/radio";
+  };
 
   return (
     <div className={styles.mainContainer}>
@@ -31,7 +34,11 @@ function SidebarHome() {
         <IoStarOutline className={styles.icon} size={80} />
       </div>
       <div className={styles.iconContainer}>
-        <PiRadio className={styles.icon} size={80} />
+        <PiRadio
+          className={styles.icon}
+          onClick={redirectToRadioPage}
+          size={80}
+        />
       </div>
       <div
         className={styles.iconContainerNews}

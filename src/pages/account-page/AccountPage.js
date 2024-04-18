@@ -1,16 +1,16 @@
 import styles from "./AccountPage.module.css";
-import { useState } from "react";
-import Checkbox from "../../components/common/buttons/checkbox";
-import LoadingDiv from "../../components/common/templates/loading-div";
-import SidebarPlaylist from "../../components/layout/sidebar-playlist";
+// import { useState } from "react";
+// import Checkbox from "../../components/common/buttons/checkbox";
+// import LoadingDiv from "../../components/common/templates/loading-div";
+// import SidebarPlaylist from "../../components/layout/sidebar-playlist";
 import SidebarHome from "../../components/layout/sidebar-home";
 
 function AccountPage() {
-  const [stayLoggedIn, setStayLoggedIn] = useState(false);
+  // const [stayLoggedIn, setStayLoggedIn] = useState(false);
 
-  function onClickStayLoggedIn() {
-    setStayLoggedIn(!stayLoggedIn);
-  }
+  // function onClickStayLoggedIn() {
+  //   setStayLoggedIn(!stayLoggedIn);
+  // }
   return (
     <>
       <div className={styles.mainContainer}>

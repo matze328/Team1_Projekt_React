@@ -1,5 +1,4 @@
-import "./Mp3player.module.css";
-// import "react-h5-audio-player/lib/styles.css";
+import "./Mp3player.css";
 import AudioPlayer from "react-h5-audio-player";
 import chill from "../../../music_test/chill.mp3";
 
