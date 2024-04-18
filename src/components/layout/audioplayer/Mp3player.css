@@ -1,10 +1,7 @@
 .rhap_container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 60vw;
-  margin: 160px 280px;
+  width: 530px;
+  margin-top: 160px;
   border-radius: 16px;
   border: 3px solid lightgrey;
   /*border-image: linear-gradient(to bottom right, grey, white) 1;*/
@@ -137,6 +134,7 @@
 .rhap_additional-controls {
   display: flex;
   flex: 1 0 auto;
+  margin-left: 20px;
   align-items: center;
 }
 
@@ -172,6 +170,7 @@
 .rhap_volume-controls {
   display: flex;
   flex: 1 0 auto;
+  margin-right: 20px;
   justify-content: flex-end;
   align-items: center;
 }

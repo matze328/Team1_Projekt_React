@@ -19,9 +19,9 @@ function StartPage() {
         <LoadingDiv />
         <Checkbox isChecked={stayLoggedIn} onClick={onClickStayLoggedIn} />
       </div> */}
-      <div className={styles.playlist}>
+      {/* <div className={styles.playlist}>
         <SidebarPlaylist />
-      </div>
+      </div> */}
     </>
   );
 }

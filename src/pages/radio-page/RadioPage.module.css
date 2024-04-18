@@ -1,5 +1,7 @@
 .mainContainer {
-  background-color: red;
+  display: flex;
+  margin-top: 116px;
+  justify-content: space-evenly;
 }
 
 .mediaplayer {
