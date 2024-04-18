@@ -17,7 +17,7 @@ function HomePage() {
       <div>
         <SidebarHome />
       </div>
-      <div>
+      <div className={styles.mp3}>
         <Mp3player />
       </div>
       <div className={styles.playlist}>

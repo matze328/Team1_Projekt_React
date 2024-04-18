@@ -1,13 +1,14 @@
 .rhap_container {
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  line-height: 1;
-  font-family: inherit;
-  width: 100%;
-  padding: 10px 15px;
-  background-color: greenyellow;
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+  align-items: center;
+  justify-content: center;
+  width: 60vw;
+  margin: 160px 280px;
+  border-radius: 16px;
+  border: 3px solid lightgrey;
+  /*border-image: linear-gradient(to bottom right, grey, white) 1;*/
+  backdrop-filter: blur(3px);
 }
 .rhap_container:focus:not(:focus-visible) {
   outline: 0;
