@@ -66,14 +66,14 @@ function AccountPage() {
                 <label> CHANGE PASSWORD</label>
                 <label>Current Password:</label>
                 <label>New Password:</label>
-                <label>Repeat Password:</label>
+                <label>Repeat New Password:</label>
               </div>
 
               <div className={styles.infoContainer}>
                 <br></br>
-                <label>secure password</label>
-                <label>new secure password</label>
-                <label>repeat new secure</label>
+                <input></input>
+                <input></input>
+                <input></input>
               </div>
             </div>
             <div className={styles.secondHeaderContainer}>
