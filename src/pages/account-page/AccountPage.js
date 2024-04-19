@@ -62,6 +62,26 @@ function AccountPage() {
               </div>
             </div>
             <div className={styles.secondHeaderContainer}>
+              <div className={styles.labelContainer}>
+                <label> CHANGE PASSWORD</label>
+                <label>Current Password:</label>
+                <label>New Password:</label>
+                <label>Repeat Password:</label>
+              </div>
+
+              <div className={styles.infoContainer}>
+                <br></br>
+                <label>secure password</label>
+                <label>new secure password</label>
+                <label>repeat new secure</label>
+              </div>
+            </div>
+            <div className={styles.secondHeaderContainer}>
+              <label className={styles.ProfileSettingPositionContainer}>
+                <Link to="/resetPassword">RESET PASSWORD</Link>
+              </label>
+            </div>
+            <div className={styles.secondHeaderContainer}>
               <label className={styles.ProfileSettingPositionContainer}>
                 <Link to="/profileSettings">
                   PROFILE SETTINGS | PERSONALISE PROFILE

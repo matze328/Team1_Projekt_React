@@ -21,6 +21,7 @@ import RechtlicheHinweise from "./pages/impressum-page/RechtlicheHinweise.js";
 import FavoritenPage from "./pages/favoriten-page";
 import AccountPage from "./pages/account-page/AccountPage.js";
 import ProfileSettings from "./pages/account-page/ProfileSettings.js";
+import ResetPassword from "./pages/account-page/ResetPassword.js";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/favoriten" element={<FavoritenPage />} />
           <Route path="/account" element={<AccountPage />} />
           <Route path="/profileSettings" element={<ProfileSettings />} />
+          <Route path="/resetPassword" element={<ResetPassword />} />
         </Routes>
       </Content>
       <Footer />
