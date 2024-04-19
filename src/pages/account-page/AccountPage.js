@@ -58,7 +58,7 @@ function AccountPage() {
               </div>
               <div className={styles.infoContainer}>
                 <br></br>
-                <label>sicheresPasswort</label>
+                <label>secure password</label>
               </div>
             </div>
             <div className={styles.secondHeaderContainer}>
@@ -103,7 +103,9 @@ function AccountPage() {
               </div>
             </div>
             <div className={styles.secondHeaderContainer}>
-              <button>DELETE ACCOUNT</button>
+              <button className={styles.deleteAccountButton}>
+                DELETE ACCOUNT
+              </button>
             </div>
           </div>
         </div>
