@@ -1,14 +1,12 @@
 .mainContainer {
   display: flex;
-  margin-top: 116px;
-  justify-content: space-evenly;
-}
+  flex-direction: grid;
+  align-items: grid;
+  justify-content: center;
+  width: 60vw;
+  margin: 120px 280px;
+  border-radius: 16px;
+  border: 3px solid lightgrey;
 
-.mediaplayer {
-  background-color: white;
-  overflow: hidden;
-  height: 250px;
-  width: 250px;
-  border-radius: 18px;
-  border: white solid 3px;
+  backdrop-filter: blur(3px);
 }

@@ -24,7 +24,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavigationBar />
-      <SidebarStart />
+      {/* <SidebarStart /> */}
       <Content>
         <Routes>
           <Route path="/" element={<StartPage />} />

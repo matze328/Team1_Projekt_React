@@ -1,0 +1,19 @@
+.mainContainer {
+  width: 60vw;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 52px 60px;
+}
+
+.mediaplayer {
+  background-color: white;
+  overflow: hidden;
+  height: 160px;
+  width: auto;
+  border-radius: 16px;
+  border: white solid 3px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
