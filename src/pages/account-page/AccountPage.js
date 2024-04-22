@@ -52,20 +52,19 @@ function AccountPage() {
           <div className={styles.contentContainer}>
             <div className={styles.headerContainer}>
               <label className={styles.labelAccount}>ACCOUNT</label>
-              <div>
-                {editMode ? (
-                  <button
-                    className={styles.doneButton}
-                    onClick={saveAndCloseEditMode}
-                  >
-                    done
-                  </button>
-                ) : (
-                  <label onClick={toggleEditMode}>
-                    <FiEdit />
-                  </label>
-                )}
-              </div>
+              <div></div>
+              {editMode ? (
+                <button
+                  className={styles.doneButton}
+                  onClick={saveAndCloseEditMode}
+                >
+                  done
+                </button>
+              ) : (
+                <label onClick={toggleEditMode}>
+                  <FiEdit />
+                </label>
+              )}
             </div>
             <div className={styles.secondHeaderContainer}>
               <div className={styles.labelContainer}>
