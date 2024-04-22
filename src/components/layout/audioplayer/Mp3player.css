@@ -1,7 +1,7 @@
 .rhap_container {
   display: flex;
   width: 530px;
-  margin-top: 160px;
+  margin-top: 8px;
   border-radius: 16px;
   border: 3px solid lightgrey;
   /*border-image: linear-gradient(to bottom right, grey, white) 1;*/

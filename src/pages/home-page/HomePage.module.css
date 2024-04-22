@@ -5,14 +5,15 @@
 .playlist {
   display: flex;
   justify-content: flex-end;
-  /* margin-right: 130px; */
-  margin-top: 104px;
+  margin-top: -268px;
   margin-bottom: 4px;
 }
 
 .mp3 {
   display: flex;
-  justify-content: center;
+  margin-top: 104px;
+  flex-direction: column;
+  align-items: center;
   margin-left: auto;
   z-index: 9999; /* Sie können den Wert nach Bedarf anpassen */
 }

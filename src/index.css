@@ -1,4 +1,6 @@
 body {
+  background-image: url("./images/Matrix.gif");
+  background-size: cover;
   width: 90%;
   background-color: black;
   margin: 0;

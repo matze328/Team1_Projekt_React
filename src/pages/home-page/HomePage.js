@@ -6,8 +6,8 @@ import SidebarPlaylist from "../../components/layout/sidebar-playlist";
 import Mp3player from "../../components/layout/audioplayer/Mp3player";
 import SidebarHome from "../../components/layout/sidebar-home";
 import { playlistData } from "../../components/playlist-test/PlaylistTest";
-import StandardBtn from "../../components/common/buttons/standard-btn/StandardBtn";
 import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
+import Tracker from "../../components/songtracker";
 
 function HomePage() {
   const [selectedSong, setSelectedSong] = useState(0);
@@ -33,6 +33,7 @@ function HomePage() {
         <SidebarHome />
       </div>
       <div className={styles.mp3}>
+        <Tracker currentSong={playlistData[selectedSong].title} />
         <Mp3player selectedSong={playlistData[selectedSong].src} />
       </div>
       <div className={styles.btn}>
