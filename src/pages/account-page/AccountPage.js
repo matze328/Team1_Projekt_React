@@ -9,6 +9,7 @@ import { UserDataGuest } from "../../api/userData/UserDataGuest";
 // import { ProfileSettings } from "../../pages/account-page/ProfileSettings";
 import { Link } from "react-router-dom";
 import { FiEdit } from "react-icons/fi";
+import { useEffect } from "react";
 
 // const currentUsername = username;
 // const currentPassword = password;
@@ -16,11 +17,7 @@ import { FiEdit } from "react-icons/fi";
 function handleSubmit() {}
 function AccountPage() {
   // Zustand für Bearbeitungsmodus
-  const [editMode, setEditMode] = useState({
-    username: false,
-    email: false,
-    password: false,
-  });
+  const [editMode, setEditMode] = useState(false);
   // Anfangswerte
   const [values, setValues] = useState({
     username: "jane",
@@ -30,16 +27,21 @@ function AccountPage() {
     password: "sicheres Passwort",
   });
 
+  const [isClicked, setIsClicked] = useState(false);
+
   // Funktion zum Bearbeiten der Eingaben
   function handleChange(e, field) {
     setValues({ ...values, [field]: e.target.value });
   }
 
   // Funktion zum Umschalten des Bearbeitungsmodus
-  function toggleEditMode(field) {
-    setEditMode({ ...editMode, [field]: !editMode[field] });
+  function toggleEditMode() {
+    setEditMode(true);
   }
 
+  function saveAndCloseEditMode() {
+    setEditMode(false);
+  }
   return (
     <>
       <div className={styles.mainContainer}>
@@ -49,7 +51,21 @@ function AccountPage() {
         <div className={styles.innerContainer}>
           <div className={styles.contentContainer}>
             <div className={styles.headerContainer}>
-              <label>ACCOUNT</label>
+              <label className={styles.labelAccount}>ACCOUNT</label>
+              <div>
+                {editMode ? (
+                  <button
+                    className={styles.doneButton}
+                    onClick={saveAndCloseEditMode}
+                  >
+                    done
+                  </button>
+                ) : (
+                  <label onClick={toggleEditMode}>
+                    <FiEdit />
+                  </label>
+                )}
+              </div>
             </div>
             <div className={styles.secondHeaderContainer}>
               <div className={styles.labelContainer}>
@@ -62,17 +78,13 @@ function AccountPage() {
                 <br></br>
                 {["username", "firstName", "lastName"].map((field, index) => (
                   <div key={index}>
-                    {editMode[field] ? (
+                    {editMode ? (
                       <input
                         value={values[field]}
                         onChange={(e) => handleChange(e, field)}
-                        onBlur={() => toggleEditMode(field)}
                       />
                     ) : (
-                      <label onClick={() => toggleEditMode(field)}>
-                        {values[field]}
-                        <FiEdit />
-                      </label>
+                      <label>{values[field]}</label>
                     )}
                   </div>
                 ))}

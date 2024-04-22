@@ -94,7 +94,7 @@
 
 .ProfileSettingPositionContainer a {
   padding: 10px;
-  color: #00ff00; /* Farbe des Links im unberührten Zustand */
+  color: var(--primary-color); /* Farbe des Links im unberührten Zustand */
   text-decoration: none; /* Entfernt die Standard-Unterstreichung des Links */
   transition: color 0.3s ease; /* Fügt eine sanfte Übergangseffekt für die Farbänderung hinzu */
 }
@@ -104,10 +104,30 @@
 
 .deleteAccountButton {
   flex: content;
-  background-color: #00ff00;
+  background-color: var(--secondary-color);
   transition: color 0.3s ease;
+  border-radius: 8px;
+  margin-left: 51%;
+  margin-right: 40%;
+  color: #fc1723;
 }
 
 .deleteAccountButton:hover {
+  background-color: cornflowerblue;
+}
+
+.labelAccount {
+  margin: 15px;
+}
+.doneButton {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  transition: color 0.3s ease;
+  border-radius: 8px;
+  height: 40px;
+  width: 90px;
+  margin-top: 4px;
+}
+.doneButton:hover {
   background-color: cornflowerblue;
 }

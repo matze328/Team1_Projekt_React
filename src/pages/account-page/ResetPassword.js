@@ -15,21 +15,26 @@ function ProfileSettings() {
           </div>
           <div className={styles.infoContainer}>
             <br></br>
+            <br></br>
             <input></input>
+
             <input></input>
           </div>
         </div>
         <div className={styles.secondHeaderContainer}>
-          <button>RESET PASSWORD</button>
+          <button type="button" className={styles.resetButton}>
+            RESET PASSWORD
+          </button>
           <br></br>
         </div>
-        <label className={styles.ProfileSettingPositionContainer}></label>
-
-        <Link to="/account">
-          <button type="button" className={styles.button}>
-            Zurück zum ACCOUNT
-          </button>
-        </Link>
+        <div className={styles.secondHeaderContainer}>
+          <label className={styles.ProfileSettingPositionContainer}></label>
+          <Link to="/account">
+            <button type="button" className={styles.button}>
+              Zurück zum ACCOUNT
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );
