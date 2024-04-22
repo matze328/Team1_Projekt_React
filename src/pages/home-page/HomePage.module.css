@@ -16,3 +16,25 @@
   margin-left: auto;
   z-index: 9999; /* Sie können den Wert nach Bedarf anpassen */
 }
+
+.btn {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.prevnext {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid lightgrey;
+  width: auto;
+  border-radius: 12px;
+  margin-top: 2px;
+  color: var(--secondary-color);
+  &:hover {
+    color: var(--primary-color);
+  }
+}

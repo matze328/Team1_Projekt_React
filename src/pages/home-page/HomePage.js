@@ -7,6 +7,7 @@ import Mp3player from "../../components/layout/audioplayer/Mp3player";
 import SidebarHome from "../../components/layout/sidebar-home";
 import { playlistData } from "../../components/playlist-test/PlaylistTest";
 import StandardBtn from "../../components/common/buttons/standard-btn/StandardBtn";
+import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
 
 function HomePage() {
   const [selectedSong, setSelectedSong] = useState(0);
@@ -33,8 +34,18 @@ function HomePage() {
       </div>
       <div className={styles.mp3}>
         <Mp3player selectedSong={playlistData[selectedSong].src} />
-        <StandardBtn text={"Next"} onClick={OnclickNext} />
-        <StandardBtn text={"Previous"} onClick={OnclickPrevious} />
+      </div>
+      <div className={styles.btn}>
+        <MdSkipPrevious
+          className={styles.prevnext}
+          size={32}
+          onClick={OnclickPrevious}
+        />
+        <MdSkipNext
+          className={styles.prevnext}
+          size={32}
+          onClick={OnclickNext}
+        />
       </div>
       <div className={styles.playlist}>
         <SidebarPlaylist />
