@@ -7,6 +7,9 @@ function ProfileSettings() {
   return (
     <div className={styles.outerContainer}>
       <div className={styles.innerContainer}>
+        <div className={styles.headerContainer}>
+          <label className={styles.labelAccount}>RESET PASSWORD</label>
+        </div>
         <div className={styles.secondHeaderContainer}>
           <div className={styles.labelContainer}>
             <label>RESET PASSWORD</label>

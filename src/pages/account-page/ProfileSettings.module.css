@@ -13,7 +13,7 @@
 
 .innerContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   width: calc(
@@ -28,9 +28,16 @@
   padding: 20px; /* Hinzugefügt */
 }
 
-/* .ProfileSettingPositionContainer {
-  padding: 10px;
-} */
+.headerContainer,
+.secondHeaderContainer {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.labelProfileSettings {
+  margin: 15px;
+}
 
 .button {
   background-color: #00ff00;
@@ -44,11 +51,26 @@
   margin: 4px 2px;
   cursor: pointer;
   transition-duration: 0.4s;
+  margin-left: 60%;
 }
 
 .button:hover {
   background-color: #008c00;
   color: white;
+}
+
+.designButton {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  transition: color 0.3s ease;
+  border-radius: 8px;
+  height: 40px;
+  width: 90px;
+  margin-top: 4px;
+}
+
+.designButton:hover {
+  background-color: cornflowerblue;
 }
 
 .infoContainer input {
@@ -65,4 +87,35 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+.labelContainer,
+.infoContainer {
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+  padding: 10px;
+  text-align: left;
+}
+
+.labelContainer {
+  flex-direction: column;
+}
+.infoContainer input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 2px;
+  height: 6px;
+}
+
+.infoContainer label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.infoContainer label:hover {
+  color: cornflowerblue;
 }
