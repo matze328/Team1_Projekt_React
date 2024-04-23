@@ -3,7 +3,7 @@ import Checkbox from "../../components/common/buttons/checkbox";
 import LoadingDiv from "../../components/common/templates/loading-div";
 import styles from "./UserPage.module.css";
 import SidebarPlaylist from "../../components/layout/sidebar-playlist";
-import Sidebar from "../../components/layout/sidebar-home/Sidebar";
+import SidebarHome from "../../components/layout/sidebar-home";
 
 function UserPage() {
   const [stayLoggedIn, setStayLoggedIn] = useState(false);
@@ -14,7 +14,7 @@ function UserPage() {
   return (
     <>
       <div className={styles.mainContainer}>
-        <Sidebar />
+        <SidebarHome />
       </div>
       <div className={styles.playlist}>
         <SidebarPlaylist />
