@@ -12,7 +12,6 @@ import NewsPage from "./pages/news-page";
 import LogInPage from "./pages/login-page";
 import UserPage from "./pages/user-page";
 import StartPage from "./pages/start-page";
-import SidebarStart from "./components/layout/sidebar-start/SidebarStart";
 import RadioPage from "./pages/radio-page";
 import SignUpPage from "./pages/signup-page";
 import Datenschutz from "./pages/impressum-page/datenschutz";
@@ -26,7 +25,6 @@ function App() {
   return (
     <BrowserRouter>
       <NavigationBar />
-      {/* <SidebarStart /> */}
       <Content>
         <Routes>
           <Route path="/" element={<StartPage />} />

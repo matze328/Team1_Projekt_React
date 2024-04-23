@@ -1,20 +1,10 @@
 import styles from "./AccountPage.module.css";
-// import { useState } from "react";
-// import Checkbox from "../../components/common/buttons/checkbox";
-// import LoadingDiv from "../../components/common/templates/loading-div";
-// import SidebarPlaylist from "../../components/layout/sidebar-playlist";
+import { useState, useEffect } from "react";
 import SidebarHome from "../../components/layout/sidebar-home";
-import { faker } from "@faker-js/faker";
-import { UserDataGuest } from "../../api/userData/UserDataGuest";
-// import { ProfileSettings } from "../../pages/account-page/ProfileSettings";
+import { ProfileSettings } from "../../pages/account-page/ProfileSettings";
 import { Link } from "react-router-dom";
 import { FiEdit } from "react-icons/fi";
-import { useEffect } from "react";
 
-// const currentUsername = username;
-// const currentPassword = password;
-
-function handleSubmit() {}
 function AccountPage() {
   // Zustand für Bearbeitungsmodus
   const [editMode, setEditMode] = useState(false);
@@ -26,8 +16,6 @@ function AccountPage() {
     email: "mail@mail.de",
     password: "sicheres Passwort",
   });
-
-  const [isClicked, setIsClicked] = useState(false);
 
   // Funktion zum Bearbeiten der Eingaben
   function handleChange(e, field) {
