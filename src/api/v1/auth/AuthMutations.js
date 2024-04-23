@@ -1,6 +1,6 @@
 import api from "../../config/api";
 
-async function fetchCreateUser(newUserName, newVorName, newNachName, newEmail, newPassword) {
+async function createUser(newUserName, newVorName, newNachName, newEmail, newPassword) {
   try {
     const result = await api.post("/signup", { newUserName, newVorName, newNachName, newEmail, newPassword });
     const profile = result.data.profile;
@@ -11,7 +11,7 @@ async function fetchCreateUser(newUserName, newVorName, newNachName, newEmail, n
   }
 };
 
-async function fetchLogout() {
+async function logout() {
   try {
     await api.delete("/logout");
     localStorage.removeItem("token");
@@ -22,4 +22,4 @@ async function fetchLogout() {
 }
 
 
-export default { fetchCreateUser,fetchLogout};
+export default { createUser,logout};

@@ -1,21 +1,32 @@
 import api from "../../config/api";
 
-async function fetchAllTodos() {
-  const result = await api.get("/todos/all");
+async function fetchAllRadiosender() {
+  const result = await api.get("/radio/all");
 
-  const todos = result.data;
+  const radiosender = result.data;
 
-  return todos;
+  return radiosender;
 }
 
-async function fetchTodoById(todoId) {
-  const result = await api.get("/todos/byid", { params: { todoId } });
+async function fetchTRadiosenderById(id) {
+  const result = await api.get("/radio/byid", { params: { id } });
 
-  const todo = result.data.todo;
+  const radiosender = result.data.id;
 
-  console.log("Mein Todo /byid", todo);
+  console.log("Das ist der Radiosender mit der /byid", radiosender);
 
-  return todo;
+  return radiosender;
+}
+async function fetchByUserId(userId) {
+  const result = await api.get("/radio/byid", { params: { userId } });
+
+  const user = result.data.userId;
+
+  console.log("Mein user /byid", user);
+
+  return user;
 }
 
-export default { fetchAllTodos, fetchTodoById };
+
+
+export default { fetchAllRadiosender, fetchTRadiosenderById,fetchByUserId };

@@ -1,50 +1,36 @@
 import api from "../../config/api";
 
-async function createTodo(newUserId, task, isDone, dueDate) {
-  const result = await api.post("/todos/create", {
-    newUserId: newUserId,
-    newTask: task,
-    newIsDone: isDone,
-    newDueDate: dueDate,
-  });
+async function createRadiosender(newRadiosender, newIsDone, newId, newUserId) {
+  try {
+    const result = await api.post("/radio/create", { newRadiosender, newIsDone, newId, newUserId });
+    const profile = result.data.profile;
+    return profile;
+  } catch (error) {
+    console.error("Fehler beim hinzufügen des Radiosender:", error);
+    throw error;
+  }
+};
 
-  const newTodo = result.data.todo;
-
-  return newTodo;
-}
-
-async function markTodo(todoId, isDone) {
-  const result = await api.put("/todos/mark", {
-    todoId: todoId,
+async function markRadiosender(id, isDone) {
+  const result = await api.put("/radio/mark", {
+    id: id,
     newIsDone: isDone,
   });
 
-  const todo = result.data.updatedTodo;
+  const radio = result.data.updatedRadioId;
 
-  return todo;
+  return radio;
 }
 
-async function updateTodo(updateId, updateTask, updateIsDone, updateDueDate) {
-  const result = await api.put("/todos/update", {
-    todoId: updateId,
-    newTask: updateTask,
-    newIsDone: updateIsDone,
-    newDueDate: updateDueDate,
-  });
-
-  const todo = result.data.updatedTodo;
-
-  return todo;
+async function deleteRadiosender(id) {
+  try {
+    const result = await api.delete("/radio/delete", { data: { id } });
+    const deleteId = result.data.deletedId;
+    return deleteId;
+  } catch (error) {
+    console.error("Fehler beim Löschen des Benutzerprofils:", error);
+    throw error;
+  }
 }
 
-async function deleteTodo(todoId) {
-  const result = await api.delete("/todos/delete", {
-    data: { todoId },
-  });
-
-  const deletedTodoId = result.data.deletedTodosId;
-
-  return deletedTodoId;
-}
-
-export default { createTodo, markTodo, updateTodo, deleteTodo };
+export default { deleteRadiosender,createRadiosender,markRadiosender };

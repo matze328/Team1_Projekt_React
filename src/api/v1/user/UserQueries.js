@@ -8,7 +8,7 @@ async function fetchAllUser() {
   return users;
 }
 
-async function fetchTodoById(userId) {
+async function fetchUserById(userId) {
   const result = await api.get("/user/byid", { params: { userId } });
 
   const user = result.data.userId;
@@ -18,4 +18,4 @@ async function fetchTodoById(userId) {
   return user;
 }
 
-export default { fetchAllUser, fetchTodoById };
+export default { fetchAllUser, fetchUserById };
