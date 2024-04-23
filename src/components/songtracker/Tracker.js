@@ -1,6 +1,4 @@
 import styles from "./Tracker.module.css";
-import { useState } from "react";
-import { playlistData } from "../playlist-test/PlaylistTest";
 
 function Tracker({ currentSong }) {
   return (
