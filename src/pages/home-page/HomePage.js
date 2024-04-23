@@ -1,6 +1,4 @@
 import { useState } from "react";
-// import Checkbox from "../../components/common/buttons/checkbox";
-// import LoadingDiv from "../../components/common/templates/loading-div";
 import styles from "./HomePage.module.css";
 import SidebarPlaylist from "../../components/layout/sidebar-playlist";
 import Mp3player from "../../components/layout/audioplayer/Mp3player";
@@ -49,7 +47,7 @@ function HomePage() {
         />
       </div>
       <div className={styles.playlist}>
-        <SidebarPlaylist />
+        <SidebarPlaylist songs={playlistData} currentSong={selectedSong} />
       </div>
     </>
   );
