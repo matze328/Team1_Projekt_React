@@ -11,13 +11,12 @@ function ProfileSettings() {
           <div className={styles.labelContainer}>
             <label>RESET PASSWORD</label>
             <label>Username:</label>
-            <label>Current Password:</label>
+            <label>E-Mail:</label>
           </div>
           <div className={styles.infoContainer}>
             <br></br>
             <br></br>
             <input></input>
-
             <input></input>
           </div>
         </div>
