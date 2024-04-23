@@ -1,5 +1,5 @@
 .mainContainer {
-  background-color: blueviolet;
+  display: flex;
 }
 
 .playlist {
