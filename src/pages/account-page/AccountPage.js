@@ -96,20 +96,21 @@ function AccountPage() {
               </div>
               <div className={styles.infoContainer}>
                 <br></br>
-                {editMode.email ? (
-                  <input
-                    value={values.email}
-                    onChange={(e) => handleChange(e, "email")}
-                    onBlur={() => toggleEditMode("email")}
-                  />
-                ) : (
-                  <label onClick={() => toggleEditMode("email")}>
-                    {values.email}
-                    <FiEdit />
-                  </label>
-                )}
+                {["email"].map((field, index) => (
+                  <div key={index}>
+                    {editMode ? (
+                      <input
+                        value={values.email}
+                        onChange={(e) => handleChange(e, "email")}
+                      />
+                    ) : (
+                      <label>{values.email}</label>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
+
             <div className={styles.secondHeaderContainer}>
               <div className={styles.labelContainer}>
                 <label>PASSWORD</label>
@@ -117,19 +118,19 @@ function AccountPage() {
               </div>
               <div className={styles.infoContainer}>
                 <br></br>
-                {editMode.password ? (
-                  <input
-                    type="password"
-                    value={values.password}
-                    onChange={(e) => handleChange(e, "password")}
-                    onBlur={() => toggleEditMode("password")}
-                  />
-                ) : (
-                  <label onClick={() => toggleEditMode("password")}>
-                    {values.password.replace(/./g, "*")}
-                    <FiEdit />
-                  </label>
-                )}
+                {["password"].map((field, index) => (
+                  <div key={index}>
+                    {editMode ? (
+                      <input
+                        type="password"
+                        value={values.password}
+                        onChange={(e) => handleChange(e, "password")}
+                      />
+                    ) : (
+                      <label>{values.password.replace(/./g, "*")}</label>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
             <div className={styles.secondHeaderContainer}>
@@ -165,7 +166,7 @@ function AccountPage() {
                 <label>DELETE ACCOUNT</label>
                 <label>Username:</label>
                 <label>Current Password:</label>
-                <label>Repeat Current Cassword:</label>
+                <label>Repeat Current Password:</label>
               </div>
               <div className={styles.infoContainer}>
                 <br></br>
