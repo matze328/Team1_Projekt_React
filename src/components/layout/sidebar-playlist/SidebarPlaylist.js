@@ -5,6 +5,7 @@ function SidebarPlaylist({ songs, currentSong }) {
     <div>
       {songs.map((song, index) => (
         <div
+        key={song.title}
           className={`${styles.mainContainer} ${
             currentSong === index ? styles.selected : undefined
           }`}

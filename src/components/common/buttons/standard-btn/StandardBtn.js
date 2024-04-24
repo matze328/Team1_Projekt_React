@@ -1,3 +1,4 @@
+import { RxButton } from "react-icons/rx";
 import styles from "./StandardBtn.module.css";
 
 function StandardBtn({ onClick, text, style, className, id }) {
@@ -7,7 +8,7 @@ function StandardBtn({ onClick, text, style, className, id }) {
       className={`${styles.myBtn} ${className}`}
       style={style}
       onClick={onClick}
-    >
+   > 
       {text}
     </div>
   );

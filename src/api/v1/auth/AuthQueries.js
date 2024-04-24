@@ -2,7 +2,7 @@ import api from "../../config/api";
 
 async function fetchlogin(email, password)  {
     try {
-      const result = await api.get("/login", { params: { email, password } });
+      const result = await api.get("/auth/login", { params: { email, password } });
       const token = result.data.token;
       localStorage.setItem("token", token);
       return token;

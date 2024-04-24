@@ -2,7 +2,7 @@ import api from "../../config/api";
 
 async function createUser(newUserName, newVorName, newNachName, newEmail, newPassword) {
   try {
-    const result = await api.post("/signup", { newUserName, newVorName, newNachName, newEmail, newPassword });
+    const result = await api.post("auth/signup", { newUserName, newVorName, newNachName, newEmail, newPassword });
     const profile = result.data.profile;
     return profile;
   } catch (error) {
