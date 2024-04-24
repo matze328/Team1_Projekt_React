@@ -27,6 +27,12 @@
   color: rgb(150, 150, 140);
   padding: 20px; /* Hinzugefügt */
 }
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
 
 .headerContainer,
 .secondHeaderContainer {
