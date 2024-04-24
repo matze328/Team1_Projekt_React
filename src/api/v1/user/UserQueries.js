@@ -1,6 +1,6 @@
 import api from "../../config/api";
 
-async function fetchAllUser() {
+export async function fetchAllUser() {
   const result = await api.get("/user/all");
 
   const users = result.data;
@@ -8,7 +8,7 @@ async function fetchAllUser() {
   return users;
 }
 
-async function fetchUserById(userId) {
+export async function fetchUserById(userId) {
   const result = await api.get("/user/byid", { params: { userId } });
 
   const user = result.data.userId;
@@ -18,4 +18,4 @@ async function fetchUserById(userId) {
   return user;
 }
 
-export default { fetchAllUser, fetchUserById };
+// export default { fetchAllUser, fetchUserById };
