@@ -10,7 +10,6 @@ function AboutMeBox({ vorname, nachname, hobbies, persoInfo }) {
         <p>Willkommen auf unsere "About Us" Seite!</p>
         <img src={profileImage} alt="Profile" className={styles.profileImage} />
         <p>Vorname: {vorname} </p>
-        <p>Nachname: {nachname}</p>
         <p>Über mich: {persoInfo} </p>
         <p>Hobbies: {hobbies}</p>
       </div>

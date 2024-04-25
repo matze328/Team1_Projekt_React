@@ -1,11 +1,29 @@
 import styles from "./AccountPage.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
 import SidebarHome from "../../components/layout/sidebar-home";
 import { ProfileSettings } from "../../pages/account-page/ProfileSettings";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { FiEdit } from "react-icons/fi";
+import UserContext from "../../components/common/userContext/UserContext";
 
 function AccountPage() {
+  const { user, isLoggedIn } = useContext(UserContext);
+
+  console.log("User:", user);
+
+  // Effekt, um die User-IDs beim Laden der Homepage zu protokollieren
+  useEffect(() => {
+    if (user && user.length > 0) {
+      console.log(
+        "User IDs:",
+        user.map((userData) => userData.userId)
+      );
+    } else {
+      console.log("Keine Benutzerdaten verfügbar.");
+    }
+  }, [user]);
+
+
   // Zustand für Bearbeitungsmodus
   const [editMode, setEditMode] = useState(false);
   // Anfangswerte
@@ -30,6 +48,14 @@ function AccountPage() {
   function saveAndCloseEditMode() {
     setEditMode(false);
   }
+  if (!isLoggedIn) {
+    
+      return (
+        <div>
+          <Navigate to={"/login"} />
+        </div>
+      );
+    } else { 
   return (
     <>
       <div className={styles.mainContainer}>
@@ -175,5 +201,5 @@ function AccountPage() {
     </>
   );
 }
-
+}
 export default AccountPage;
