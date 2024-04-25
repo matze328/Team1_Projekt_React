@@ -12,7 +12,7 @@ function AboutMePage() {
 
       <AboutMeBox
         vorname="Banu"
-        persoInfo="Mit einer Begeisterung für Design und Ästhetik, strebe ich danach, visuell ansprechende, innovative und voll funktionierende Lösungen zu gestalten."
+        persoInfo="Mit einer Begeisterung für Design und Ästhetik, strebe ich danach, visuell ansprechende, innovative und voll funktionierende Lösungen zu entwickeln und zu gestalten."
         hobbies="Gerne gehe ich auf Städtereisen und trainiere im Fitnessstudio, um fit zu bleiben. Selbständige Weiterentwicklung durch Kurse und Workshops ist mir wichtig, um meine Fähigkeiten kontinuierlich zu verbessern."
       />
       <AboutMeBox
