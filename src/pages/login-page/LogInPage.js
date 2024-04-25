@@ -9,13 +9,10 @@ import { AuthQueries } from "../../api/v1/auth";
 
 function LogInPage() {
   const [userName, setUsername] = useState("");
-  const { setIsLoggedIn, isLoggedIn, logInUser, logOutUser } = useContext(UserContext);
+  const { logInUser } = useContext(UserContext);
   const [password, setPassword] = useState("");
-  const { users } = useContext(UserContext);
   const navigate = useNavigate();
   //   const history = useHistory();
-
-  console.log(users);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -24,9 +21,7 @@ function LogInPage() {
     try {
       // const token = await AuthQueries.fetchlogin(userName, password);
       // console.log("du bist angemeldet", token);
-      logInUser(userName, password);
-
-      navigate("/home"); // Navigiere zur Homepage nach erfolgreicher Anmeldung
+      await logInUser(userName, password);
     } catch (error) {
       console.error("Fehler beim Einloggen:", error);
       // Hier können Sie entsprechende Fehlermeldungen anzeigen

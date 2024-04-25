@@ -4,7 +4,7 @@ import UserContext from "../../../common/userContext/UserContext";
 import { useEffect, useContext } from "react";
 
 function NavBarLeft() {
-  const { user, isLoggedIn } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   const redirectToStart = () => {
     window.location.href = "http://localhost:3000/";
@@ -19,18 +19,12 @@ function NavBarLeft() {
   //     console.log("Keine Benutzerdaten verfügbar.");
   //   }
   // }, [user]);
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      // Setzen Sie den isLoggedIn-Status basierend auf dem Vorhandensein des Tokens
-      // Hier können Sie auch den Token decodieren und den Benutzer authentifizieren
-    }
-  }, []);
+
   const redirectToHomepage = () => {
     window.location.href = "http://localhost:3000/home";
   };
 
-  if (!isLoggedIn) {
+  if (!!user) {
     return (
       <div className={styles.mainContainer} onClick={redirectToStart}>
         <img className={styles.logImg} src={logo} alt="logo" />

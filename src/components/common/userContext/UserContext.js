@@ -1,61 +1,61 @@
 import React, { createContext, useEffect, useState } from "react";
-import { Axios } from "axios";
-// import { UserDataGuest } from "../../../api/userData/UserDataGuest";
-import { fetchAllUser } from "../../../api/v1/user/UserQueries";
+import UserQueries, { fetchAllUser } from "../../../api/v1/user/UserQueries";
 import { AuthQueries } from "../../../api/v1/auth";
-import { json } from "react-router-dom";
 
 //Context-Objekt für den Benutzerstatus
-
 const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState([]);
-  const [isLoggedIn, setIsLoggedIn] = useState(undefined);
+  const [user, setUser] = useState(null);
+
+  async function getCurrentUserFromLocalStorage() {
+    const user = localStorage.getItem("user");
+    if (!user) return;
+    const jsonUser = await JSON.parse(user);
+    if (jsonUser) {
+      setUser(jsonUser);
+    }
+    return jsonUser;
+  }
 
   //Funktion zum Abrufen der Benutzerdaten
-  //
-  async function fetchUserDatas() {
-    const data = await fetchAllUser();
-    setUser(data);
-  }
-  const logOutUser = () => {
-    setIsLoggedIn(undefined);
-    localStorage.removeItem("user");
-  };
-  const logInUser = (email, password) => {
-    console.log(user);
-    const foundUser = user.find(
-      (userdata) => userdata.email === email && userdata.password === password
-    );
-    console.log(foundUser);
-    if (foundUser) {
-      setIsLoggedIn(true);
-      localStorage.setItem("user", JSON.stringify(foundUser));
+  async function fetchUserData() {
+    const currentUser = await getCurrentUserFromLocalStorage();
+    if (!currentUser) {
+      setUser(null);
+      if (
+        window.location.pathname !== "/login" &&
+        window.location.pathname !== "/signup"
+      ) {
+        window.location.href = "http://localhost:3000/login";
+      }
+      return;
     }
-  };
-  useEffect(() => {
-    fetchUserDatas();
-  }, []);
-
-  useEffect(() => {
-    const cachedUserData = localStorage.getItem("user");
-    const parseUserData = JSON.parse(cachedUserData);
-    if (parseUserData) {
-      setIsLoggedIn(true);
-      console.log("hello2", isLoggedIn);
-      if (!user) {
+    const data = await UserQueries.fetchUserById(currentUser.userId);
+    if (data.profile) {
+      localStorage.setItem("user", JSON.stringify(data.profile));
+      setUser(data.profile);
+      if (window.location.pathname !== "/home") {
         window.location.href = "http://localhost:3000/home";
       }
-    } else {
-      window.location.href = "http://localhost:3000/login";
     }
+  }
+  const logOutUser = () => {
+    localStorage.removeItem("user");
+  };
+  const logInUser = async (email, password) => {
+    const response = await AuthQueries.loginUser(email, password);
+    if (response.user) {
+      localStorage.setItem("user", JSON.stringify(response.user));
+      window.location.href = "http://localhost:3000/home";
+    }
+  };
+  useEffect(() => {
+    fetchUserData();
   }, []);
 
   return (
-    <UserContext.Provider
-      value={{ user, setIsLoggedIn, isLoggedIn, logInUser, logOutUser }}
-    >
+    <UserContext.Provider value={{ user, logInUser, logOutUser }}>
       {children}
     </UserContext.Provider>
   );
