@@ -17,28 +17,21 @@ function HomePage() {
 
   // Effekt, um die User-IDs beim Laden der Homepage zu protokollieren
   useEffect(() => {
-    if (user && user.length > 0) {
-      console.log(
-        "User IDs:",
-        user.map((userData) => userData.userId)
-      );
+    if (isLoggedIn) {
+      console.log("Du bist angemeldet!");
     } else {
       console.log("Keine Benutzerdaten verfügbar.");
     }
-  }, [user]);
+  }, []);
 
-// Effekt zum Überprüfen des Tokens beim Laden der Homepage
-// useEffect(() => {
-//   const token = localStorage.getItem("token");
-//   if (token) {
-//     // Setzen Sie den isLoggedIn-Status basierend auf dem Vorhandensein des Tokens
-//     // Hier können Sie auch den Token decodieren und den Benutzer authentifizieren
-//   }
-// }, []);
-
-
-
-
+  // Effekt zum Überprüfen des Tokens beim Laden der Homepage
+  // useEffect(() => {
+  //   const token = localStorage.getItem("token");
+  //   if (token) {
+  //     // Setzen Sie den isLoggedIn-Status basierend auf dem Vorhandensein des Tokens
+  //     // Hier können Sie auch den Token decodieren und den Benutzer authentifizieren
+  //   }
+  // }, []);
 
   function OnclickNext() {
     if (selectedSong < playlistData.length - 1) {

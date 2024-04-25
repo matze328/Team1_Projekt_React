@@ -14,12 +14,15 @@ export const UserProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(undefined);
 
   //Funktion zum Abrufen der Benutzerdaten
-
+  //
   async function fetchUserDatas() {
     const data = await fetchAllUser();
     setUser(data);
   }
-  const logOutUser = () => {};
+  const logOutUser = () => {
+    setIsLoggedIn(undefined);
+    localStorage.removeItem("user");
+  };
   const logInUser = (email, password) => {
     console.log(user);
     const foundUser = user.find(
@@ -37,7 +40,16 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
     const cachedUserData = localStorage.getItem("user");
-    console.log(cachedUserData);
+    const parseUserData = JSON.parse(cachedUserData);
+    if (parseUserData) {
+      setIsLoggedIn(true);
+      console.log("hello2", isLoggedIn);
+      if (!user) {
+        window.location.href = "http://localhost:3000/home";
+      }
+    } else {
+      window.location.href = "http://localhost:3000/login";
+    }
   }, []);
 
   return (
