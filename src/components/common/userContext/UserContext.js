@@ -2,6 +2,8 @@ import React, { createContext, useEffect, useState } from "react";
 import UserQueries, { fetchAllUser } from "../../../api/v1/user/UserQueries";
 import { AuthQueries } from "../../../api/v1/auth";
 
+const unauthenticatedRoutes = ["/login", "/signup", "/"];
+
 //Context-Objekt für den Benutzerstatus
 const UserContext = createContext();
 
@@ -23,10 +25,7 @@ export const UserProvider = ({ children }) => {
     const currentUser = await getCurrentUserFromLocalStorage();
     if (!currentUser) {
       setUser(null);
-      if (
-        window.location.pathname !== "/login" &&
-        window.location.pathname !== "/signup"
-      ) {
+      if (!unauthenticatedRoutes.includes(window.location.pathname)) {
         window.location.href = "http://localhost:3000/login";
       }
       return;
