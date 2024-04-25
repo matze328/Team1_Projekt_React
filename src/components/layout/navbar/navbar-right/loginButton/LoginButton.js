@@ -15,7 +15,9 @@ function LoginButton({ setIsLoggedIn, isLoggedIn  }) {
   const redirectToLogin = () => {
     window.location.href = "http://localhost:3000/login";
   };
-
+  const redirectToStart = () => {
+    window.location.href = "http://localhost:3000/";
+  };
   function setIsLoggedInFalse() {
     setIsLoggedIn(false);
   }
@@ -23,7 +25,7 @@ function LoginButton({ setIsLoggedIn, isLoggedIn  }) {
     //Wenn wir eingeloggt sind, muss der Button LogOut oder LoggedIn zeigen
     //und das klicken muss uns ausloggen ("isLoggedIn = false")
     logInText = "LogOut";
-    onClick = setIsLoggedInFalse;
+    onClick = redirectToStart;
   } else {
     logInText = "LogIn";
     onClick = redirectToLogin;
