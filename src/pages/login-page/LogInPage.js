@@ -9,8 +9,7 @@ import { AuthQueries } from "../../api/v1/auth";
 
 function LogInPage() {
   const [userName, setUsername] = useState("");
-  const { setIsLoggedIn, isLoggedIn } = useContext(UserContext);
-
+  const { setIsLoggedIn, isLoggedIn, logInUser, logOutUser } = useContext(UserContext);
   const [password, setPassword] = useState("");
   const { users } = useContext(UserContext);
   const navigate = useNavigate();
@@ -23,9 +22,9 @@ function LogInPage() {
     // Hier können Sie die Logik für die Anmeldung implementieren, z.B. API-Aufruf zur Überprüfung der Anmeldeinformationen
     // history.push("/home");
     try {
-      const token = await AuthQueries.fetchlogin(userName, password);
-      console.log("du bist angemeldet", token);
-      setIsLoggedIn(true);
+      // const token = await AuthQueries.fetchlogin(userName, password);
+      // console.log("du bist angemeldet", token);
+      logInUser(userName, password);
 
       navigate("/home"); // Navigiere zur Homepage nach erfolgreicher Anmeldung
     } catch (error) {
