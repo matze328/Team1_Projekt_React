@@ -26,12 +26,12 @@ function LogInPage() {
     <div className={styles.outerContainer}>
       <div className={styles.innerContainer}>
         <br />
-        <label>Username:</label>
+        <label>E-Mail:</label>
         <input
           className={styles.input}
           onSubmit={handleLogin}
-          placeholder="UserName"
-          type="userName"
+          placeholder="E-Mail"
+          type="E-Mail"
           value={userName}
           onChange={(e) => setUsername(e.target.value)}
           required
