@@ -1,27 +1,22 @@
-// import { useState } from "react";
-// import Checkbox from "../../components/common/buttons/checkbox";
-// import LoadingDiv from "../../components/common/templates/loading-div";
 import styles from "./StartPage.module.css";
-import SidebarPlaylist from "../../components/layout/sidebar-playlist";
 import SidebarStart from "../../components/layout/sidebar-start";
+import { TextAnim } from "text-animations-react";
 
 function StartPage() {
-  // const [stayLoggedIn, setStayLoggedIn] = useState(false);
-
-  // function onClickStayLoggedIn() {
-  //   setStayLoggedIn(!stayLoggedIn);
-  // }
   return (
     <>
       <SidebarStart />
-      {/* <div className={styles.mainContainer}>
-        <div> This is my homepage</div>
-        <LoadingDiv />
-        <Checkbox isChecked={stayLoggedIn} onClick={onClickStayLoggedIn} />
-      </div> */}
-      {/* <div className={styles.playlist}>
-        <SidebarPlaylist />
-      </div> */}
+      <div className={styles.mainContainer}>
+        <div className={styles.mutrix}>
+          <TextAnim
+            name="MUTRIX"
+            size={6}
+            type="reveal"
+            count="infinite"
+            duration={10}
+          />
+        </div>
+      </div>
     </>
   );
 }

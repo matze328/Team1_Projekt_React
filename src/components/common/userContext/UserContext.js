@@ -2,7 +2,13 @@ import React, { createContext, useEffect, useState } from "react";
 import UserQueries, { fetchAllUser } from "../../../api/v1/user/UserQueries";
 import { AuthQueries } from "../../../api/v1/auth";
 
-const unauthenticatedRoutes = ["/login", "/signup", "/"];
+const unauthenticatedRoutes = [
+  "/login",
+  "/signup",
+  "/",
+  "/news&blog",
+  "/radio",
+];
 
 //Context-Objekt für den Benutzerstatus
 const UserContext = createContext();
@@ -34,7 +40,6 @@ export const UserProvider = ({ children }) => {
     if (data.profile) {
       localStorage.setItem("user", JSON.stringify(data.profile));
       setUser(data.profile);
-
     }
   }
   const logOutUser = () => {
