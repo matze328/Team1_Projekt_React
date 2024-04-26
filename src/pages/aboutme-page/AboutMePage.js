@@ -16,14 +16,14 @@ function AboutMePage() {
         hobbies="Gerne gehe ich auf Städtereisen und trainiere im Fitnessstudio, um fit zu bleiben. Selbständige Weiterentwicklung durch Kurse und Workshops ist mir wichtig, um meine Fähigkeiten kontinuierlich zu verbessern."
       />
       <AboutMeBox
-        vorname="Person 3"
-        persoInfo="aboutMe ."
-        hobbies="Hobby 5, Hobby 6"
+        vorname="Alex"
+        persoInfo="Die ursprüngliche Idee zur dieser App entstand von mir :)"
+        hobbies="Ich verbringe meine Freizeit mit Computerspiele, Brettspiele und Sport"
       />
       <AboutMeBox
-        vorname="Person 4"
-        persoInfo="aboutMe."
-        hobbies="Hobby 7, Hobby 8"
+        vorname="Igor"
+        persoInfo="Ich sammle Sporen, Grünspan und Schimmelpilze. Danke"
+        hobbies="Gamedev und tanzen"
       />
     </div>
   );
