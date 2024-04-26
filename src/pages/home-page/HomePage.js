@@ -8,30 +8,11 @@ import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
 import Tracker from "../../components/songtracker";
 import UserContext from "../../components/common/userContext/UserContext";
 import { Navigate } from "react-router-dom";
+import StartPage from "../start-page";
 
 function HomePage() {
   const [selectedSong, setSelectedSong] = useState(0);
-  const { user, isLoggedIn } = useContext(UserContext);
-
-  console.log("User:", user);
-
-  // Effekt, um die User-IDs beim Laden der Homepage zu protokollieren
-  useEffect(() => {
-    if (isLoggedIn) {
-      console.log("Du bist angemeldet!");
-    } else {
-      console.log("Keine Benutzerdaten verfügbar.");
-    }
-  }, []);
-
-  // Effekt zum Überprüfen des Tokens beim Laden der Homepage
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (token) {
-  //     // Setzen Sie den isLoggedIn-Status basierend auf dem Vorhandensein des Tokens
-  //     // Hier können Sie auch den Token decodieren und den Benutzer authentifizieren
-  //   }
-  // }, []);
+  const { user } = useContext(UserContext);
 
   function OnclickNext() {
     if (selectedSong < playlistData.length - 1) {
@@ -47,41 +28,33 @@ function HomePage() {
       setSelectedSong(playlistData.length - 1);
     }
   }
-
-  if (!isLoggedIn) {
-    return (
+  if (!user) return <StartPage />;
+  return (
+    <>
       <div>
-        <Navigate to={"/login"} />
+        <SidebarHome />
       </div>
-    );
-  } else {
-    return (
-      <>
-        <div>
-          <SidebarHome />
-        </div>
-        <div className={styles.mp3}>
-          <Tracker currentSong={playlistData[selectedSong].title} />
-          <Mp3player selectedSong={playlistData[selectedSong].src} />
-        </div>
-        <div className={styles.btn}>
-          <MdSkipPrevious
-            className={styles.prevnext}
-            size={32}
-            onClick={OnclickPrevious}
-          />
-          <MdSkipNext
-            className={styles.prevnext}
-            size={32}
-            onClick={OnclickNext}
-          />
-        </div>
-        <div className={styles.playlist}>
-          <SidebarPlaylist songs={playlistData} currentSong={selectedSong} />
-        </div>
-      </>
-    );
-  }
+      <div className={styles.mp3}>
+        <Tracker currentSong={playlistData[selectedSong].title} />
+        <Mp3player selectedSong={playlistData[selectedSong].src} />
+      </div>
+      <div className={styles.btn}>
+        <MdSkipPrevious
+          className={styles.prevnext}
+          size={32}
+          onClick={OnclickPrevious}
+        />
+        <MdSkipNext
+          className={styles.prevnext}
+          size={32}
+          onClick={OnclickNext}
+        />
+      </div>
+      <div className={styles.playlist}>
+        <SidebarPlaylist songs={playlistData} currentSong={selectedSong} />
+      </div>
+    </>
+  );
 }
 
 export default HomePage;

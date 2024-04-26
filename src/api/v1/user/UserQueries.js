@@ -11,11 +11,11 @@ export async function fetchAllUser() {
 export async function fetchUserById(userId) {
   const result = await api.get("/user/byid", { params: { userId } });
 
-  const user = result.data.userId;
+  const reponse = result.data;
 
-  console.log("Mein user /byid", user);
+  console.log("Mein user /byid", reponse);
 
-  return user;
+  return reponse;
 }
 
-// export default { fetchAllUser, fetchUserById };
+export default { fetchAllUser, fetchUserById };

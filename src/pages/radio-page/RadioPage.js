@@ -1,13 +1,16 @@
 import Mediaplayer from "../../components/layout/mediaplayer";
 import styles from "./RadioPage.module.css";
 import SidebarStart from "../../components/layout/sidebar-start";
-
+import UserContext from "../../components/common/userContext/UserContext";
+import { useContext } from "react";
+import SidebarHome from "../../components/layout/sidebar-home";
 function RadioPage() {
+  const { user } = useContext(UserContext);
+
   return (
     <>
-      <SidebarStart />
+      {user ? <SidebarHome /> : <SidebarStart />}
       <div className={styles.mainContainer}>
-        {/* Abhängigkeit useContext: LoggedIn SidebarHome, LoggedOut SidebarStart */}
         <Mediaplayer />
       </div>
     </>

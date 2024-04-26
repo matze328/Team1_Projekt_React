@@ -1,15 +1,17 @@
 import api from "../../config/api";
 
-async function fetchlogin(email, password)  {
-    try {
-      const result = await api.get("/auth/login", { params: { email, password } });
-      const token = result.data.token;
-      localStorage.setItem("token", token);
-      return token;
-    } catch (error) {
-      console.error("Fehler beim Einloggen:", error);
-      throw error;
-    }
-  };
+async function loginUser(email, password) {
+  try {
+    const result = await api.get("/auth/login", {
+      params: { email, password },
+    });
+    const data = result.data;
 
-export default { fetchlogin };
+    return data;
+  } catch (error) {
+    console.error("Fehler beim Einloggen:", error);
+    throw error;
+  }
+}
+
+export default { loginUser };
