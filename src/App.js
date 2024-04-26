@@ -7,7 +7,6 @@ import ImpressumPage from "./pages/impressum-page";
 import Content from "./components/layout/content";
 import AboutMePage from "./pages/aboutme-page";
 import Footer from "./components/layout/footer";
-import ToDoPage from "./pages/todo-page/";
 import NewsPage from "./pages/news-page";
 import LogInPage from "./pages/login-page";
 import UserPage from "./pages/user-page";
@@ -33,7 +32,6 @@ function App() {
           <Route path="/login" element={<LogInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/aboutme" element={<AboutMePage />} />
-          <Route path="/todo" element={<ToDoPage />} />
           <Route path="/radio" element={<RadioPage />} />
           <Route path="/news&blog" element={<NewsPage />} />
           <Route path="/user" element={<UserPage />} />
