@@ -2,8 +2,6 @@ import StandardBtn from "../../components/common/buttons/standard-btn";
 import UserContext from "../../components/common/userContext/UserContext";
 import styles from "./LogInPage.module.css";
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { AuthQueries } from "../../api/v1/auth";
 
 // import { useHistory } from "react-router-dom";
 
@@ -11,20 +9,13 @@ function LogInPage() {
   const [userName, setUsername] = useState("");
   const { logInUser } = useContext(UserContext);
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-  //   const history = useHistory();
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    // Hier können Sie die Logik für die Anmeldung implementieren, z.B. API-Aufruf zur Überprüfung der Anmeldeinformationen
-    // history.push("/home");
     try {
-      // const token = await AuthQueries.fetchlogin(userName, password);
-      // console.log("du bist angemeldet", token);
       await logInUser(userName, password);
     } catch (error) {
       console.error("Fehler beim Einloggen:", error);
-      // Hier können Sie entsprechende Fehlermeldungen anzeigen
     }
   };
 

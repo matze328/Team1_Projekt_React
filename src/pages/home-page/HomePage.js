@@ -8,6 +8,7 @@ import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
 import Tracker from "../../components/songtracker";
 import UserContext from "../../components/common/userContext/UserContext";
 import { Navigate } from "react-router-dom";
+import StartPage from "../start-page";
 
 function HomePage() {
   const [selectedSong, setSelectedSong] = useState(0);
@@ -27,7 +28,7 @@ function HomePage() {
       setSelectedSong(playlistData.length - 1);
     }
   }
-
+  if (!user) return <StartPage />;
   return (
     <>
       <div>

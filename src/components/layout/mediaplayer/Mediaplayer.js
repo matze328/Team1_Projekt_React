@@ -24,10 +24,8 @@ function Mediaplayer() {
           height="100%"
           src="https://www.youtube.com/embed/u8qal-5yQGg?list=PLHOciPo-RQU67JIOAIN1e5v3RITDdhpj7"
           title="Background Music For Videos VLOG YouTube -  Epic Cinematic Inspiring Motivational [FREE DOWNLOAD]"
-          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
       <div className={styles.mediaplayer}>
@@ -43,10 +41,8 @@ function Mediaplayer() {
           height="100%"
           src="https://www.youtube.com/embed/u8qal-5yQGg?list=PLHOciPo-RQU67JIOAIN1e5v3RITDdhpj7"
           title="Background Music For Videos VLOG YouTube -  Epic Cinematic Inspiring Motivational [FREE DOWNLOAD]"
-          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
+         allowFullScreen
         ></iframe>
       </div>
     </div>

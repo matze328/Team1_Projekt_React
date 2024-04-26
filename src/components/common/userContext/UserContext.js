@@ -34,9 +34,7 @@ export const UserProvider = ({ children }) => {
     if (data.profile) {
       localStorage.setItem("user", JSON.stringify(data.profile));
       setUser(data.profile);
-      if (window.location.pathname !== "/home") {
-        window.location.href = "http://localhost:3000/home";
-      }
+
     }
   }
   const logOutUser = () => {
@@ -46,11 +44,12 @@ export const UserProvider = ({ children }) => {
     const response = await AuthQueries.loginUser(email, password);
     if (response.user) {
       localStorage.setItem("user", JSON.stringify(response.user));
-      window.location.href = "http://localhost:3000/home";
+      window.location.href = "http://localhost:3000/";
     }
   };
   useEffect(() => {
     fetchUserData();
+    console.log("hallo123");
   }, []);
 
   return (

@@ -32,13 +32,7 @@ function AccountPage() {
   function saveAndCloseEditMode() {
     setEditMode(false);
   }
-  if (!user) {
-    return (
-      <div>
-        <Navigate to={"/login"} />
-      </div>
-    );
-  } else {
+
     return (
       <>
         <div className={styles.mainContainer}>
@@ -184,5 +178,5 @@ function AccountPage() {
       </>
     );
   }
-}
+
 export default AccountPage;

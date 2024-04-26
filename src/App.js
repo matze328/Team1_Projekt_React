@@ -11,7 +11,6 @@ import ToDoPage from "./pages/todo-page/";
 import NewsPage from "./pages/news-page";
 import LogInPage from "./pages/login-page";
 import UserPage from "./pages/user-page";
-import StartPage from "./pages/start-page";
 import RadioPage from "./pages/radio-page";
 import SignUpPage from "./pages/signup-page";
 import Datenschutz from "./pages/impressum-page/datenschutz";
@@ -27,8 +26,7 @@ function App() {
       <NavigationBar />
       <Content>
         <Routes>
-          <Route path="/" element={<StartPage />} />
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/impressum" element={<ImpressumPage />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="/RechtlicheHinweise" element={<RechtlicheHinweise />} />
