@@ -55,11 +55,14 @@ function ProfileSettings() {
                 />
               </div>
             </div>
-            <Link to="/account">
-              <button type="button" className={styles.button}>
-                Zurück zum ACCOUNT
-              </button>
-            </Link>
+            <div className={styles.secondHeaderContainer}>
+              <label className={styles.ProfileSettingPositionContainer}></label>
+              <Link to="/account">
+                <button type="button" className={styles.button}>
+                  Zurück zum ACCOUNT
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

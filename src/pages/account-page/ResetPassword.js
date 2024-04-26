@@ -31,7 +31,7 @@ function ProfileSettings() {
             <br></br>
           </div>
           <div className={styles.secondHeaderContainer}>
-            <label className={styles.ProfileSettingPositionContainer}></label>
+            <label className={styles.ResetPasswordPositionContainer}></label>
             <Link to="/account">
               <button type="button" className={styles.button}>
                 Zurück zum ACCOUNT

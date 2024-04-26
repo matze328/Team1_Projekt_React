@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   width: 60vw;
-  margin: 160px 280px;
+  margin-left: 280px;
   border-radius: 16px;
   border: 3px solid lightgrey;
   /*border-image: linear-gradient(to bottom right, grey, white) 1;*/
@@ -13,7 +13,7 @@
 
 .innerContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: center;
   width: calc(
@@ -47,7 +47,7 @@
 }
 
 .button {
-  background-color: #00ff00;
+  background-color: var(--primary-color);
   border-radius: 16px;
   color: white;
   padding: 15px 32px;
@@ -58,7 +58,7 @@
   margin: 4px 2px;
   cursor: pointer;
   transition-duration: 0.4s;
-  margin-left: 60%;
+  margin-left: 72%;
 }
 
 .button:hover {
@@ -125,4 +125,13 @@
 
 .infoContainer label:hover {
   color: cornflowerblue;
+}
+.ProfileSettingPositionContainer a {
+  padding: 10px;
+  color: #00ff00; /* Farbe des Links im unberührten Zustand */
+  text-decoration: none; /* Entfernt die Standard-Unterstreichung des Links */
+  transition: color 0.3s ease; /* Fügt eine sanfte Übergangseffekt für die Farbänderung hinzu */
+}
+.ProfileSettingPositionContainer :hover {
+  color: cornflowerblue; /* Farbe des Links beim Hovern */
 }

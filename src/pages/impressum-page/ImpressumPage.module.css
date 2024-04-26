@@ -32,3 +32,13 @@ h1,
 h2 {
   color: rgb(250, 250, 240);
 }
+
+.blobContainer a {
+  padding: 10px;
+  color: var(--primary-color); /* Farbe des Links im unberührten Zustand */
+  text-decoration: none; /* Entfernt die Standard-Unterstreichung des Links */
+  transition: color 0.3s ease; /* Fügt eine sanfte Übergangseffekt für die Farbänderung hinzu */
+}
+.blobContainer :hover {
+  color: cornflowerblue; /* Farbe des Links beim Hovern */
+}
