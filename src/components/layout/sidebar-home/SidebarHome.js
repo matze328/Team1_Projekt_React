@@ -4,6 +4,8 @@ import { PiRadio } from "react-icons/pi";
 import { faker } from "@faker-js/faker";
 import { MdManageAccounts } from "react-icons/md";
 
+const profilePic = faker.image.avatar();
+
 function SidebarHome() {
   const redirectToNewsPage = () => {
     window.location.href = "http://localhost:3000/news&blog";
@@ -26,7 +28,7 @@ function SidebarHome() {
       <img
         onClick={redirectToUserPage}
         alt="avatar"
-        src={faker.image.avatar()}
+        src={profilePic}
         className={styles.iconContainer}
         size={80}
       />
