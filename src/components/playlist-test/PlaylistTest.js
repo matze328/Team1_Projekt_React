@@ -1,8 +1,8 @@
-import chill from "../../music_test/chill.mp3";
-import here from "../../music_test/extenz+Here.mp3";
-import revolution from "../../music_test/extenz+Revolution.wav";
-import nostalgy from "../../music_test/Spiring+Nostalgy.wav";
-import bamboo from "../../music_test/tubebackr+Bamboo Groove.mp3";
+import chill from "../../mediathek/music_test/chill.mp3";
+import here from "../../mediathek/music_test/extenz+Here.mp3";
+import revolution from "../../mediathek/music_test/extenz+Revolution.wav";
+import nostalgy from "../../mediathek/music_test/Spiring+Nostalgy.wav";
+import bamboo from "../../mediathek/music_test/tubebackr+Bamboo Groove.mp3";
 
 // import <Songtitel> from "<lokaler Speicher>"; -> hier eigene Musik mit Pfad hinterlegen
 
