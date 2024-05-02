@@ -7,7 +7,6 @@
   margin-left: 280px;
   border-radius: 16px;
   border: 3px solid lightgrey;
-  /*border-image: linear-gradient(to bottom right, grey, white) 1;*/
   backdrop-filter: blur(3px);
 }
 
@@ -25,7 +24,7 @@
   border-radius: 16px;
   background-color: rgba(255, 255, 255, 0.15);
   color: rgb(150, 150, 140);
-  padding: 20px; /* Hinzugefügt */
+  padding: 20px;
 }
 .contentContainer {
   display: flex;

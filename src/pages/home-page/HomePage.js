@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import styles from "./HomePage.module.css";
 import SidebarPlaylist from "../../components/layout/sidebar-playlist";
 import Mp3player from "../../components/layout/audioplayer/Mp3player";
@@ -7,7 +7,6 @@ import { playlistData } from "../../components/playlist-test/PlaylistTest";
 import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
 import Tracker from "../../components/songtracker";
 import UserContext from "../../components/common/userContext/UserContext";
-import { Navigate } from "react-router-dom";
 import StartPage from "../start-page";
 
 function HomePage() {

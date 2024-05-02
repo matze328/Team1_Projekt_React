@@ -1,5 +1,5 @@
 import styles from "./ImpressumPage.module.css";
-import { Link } from "react-router-dom"; // Importieren Sie Link von react-router-dom
+import { Link } from "react-router-dom";
 
 function ImpressumPage() {
   return (

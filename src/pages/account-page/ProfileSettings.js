@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./ProfileSettings.module.css";
 import { Link } from "react-router-dom";
-// import { AccountPage } from "../account-page/AccountPage";
 
 function ProfileSettings() {
   return (

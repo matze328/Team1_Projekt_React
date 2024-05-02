@@ -1,7 +1,6 @@
 .mainContainer {
   width: 98vw;
   min-height: 100px;
-  /* background-color: --background-color; */
   margin-left: 2px;
   background-image: url("../../../images/Matrix.gif");
   background-size: cover;
@@ -10,6 +9,7 @@
   justify-content: space-evenly;
   align-items: center;
   position: bottom;
+  z-index: 999;
 }
 
 .spacer {

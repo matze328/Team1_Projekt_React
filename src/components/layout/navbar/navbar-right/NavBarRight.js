@@ -2,7 +2,7 @@ import StandardBtn from "../../../common/buttons/standard-btn";
 import UserContext from "../../../common/userContext/UserContext";
 import styles from "./NavBarRight.module.css";
 import LoginButton from "./loginButton/LoginButton";
-import { useState, useContext, useEffect } from "react";
+import { useContext } from "react";
 
 function NavBarRight() {
   const { user } = useContext(UserContext);

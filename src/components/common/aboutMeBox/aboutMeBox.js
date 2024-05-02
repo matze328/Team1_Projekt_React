@@ -2,7 +2,7 @@ import styles from "./aboutMeBox.module.css";
 import React from "react";
 import profileImage from "../../../images/mutrix.jpg";
 
-function AboutMeBox({ vorname, nachname, hobbies, persoInfo }) {
+function AboutMeBox({ vorname, hobbies, persoInfo }) {
   return (
     <div className={styles.outerContainer}>
       <div className={styles.innerContainer}>

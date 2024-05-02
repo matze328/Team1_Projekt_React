@@ -3,8 +3,6 @@ import UserContext from "../../components/common/userContext/UserContext";
 import styles from "./LogInPage.module.css";
 import { useContext, useState } from "react";
 
-// import { useHistory } from "react-router-dom";
-
 function LogInPage() {
   const [userName, setUsername] = useState("");
   const { logInUser } = useContext(UserContext);
