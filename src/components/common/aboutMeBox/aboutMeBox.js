@@ -1,6 +1,6 @@
 import styles from "./aboutMeBox.module.css";
 import React from "react";
-import profileImage from "../../../images/mutrix.jpg";
+import profileImage from "../../../mediathek/images/mutrix.jpg";
 
 function AboutMeBox({ vorname, hobbies, persoInfo }) {
   return (

@@ -15,7 +15,7 @@
   border: 3px solid var(--primary-color);
 }
 .iconContainer {
-  background-image: url("../../../images/template-2.jpg");
+  background-image: url("../../../mediathek/images/template-2.jpg");
   background-size: cover;
   cursor: pointer;
   display: flex;

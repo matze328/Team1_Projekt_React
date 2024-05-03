@@ -1,5 +1,5 @@
 import styles from "./FooterLeft.module.css";
-import logo from "../../../../images/mutrix.jpg";
+import logo from "../../../../mediathek/images/mutrix.jpg";
 
 function FooterLeft() {
   return (

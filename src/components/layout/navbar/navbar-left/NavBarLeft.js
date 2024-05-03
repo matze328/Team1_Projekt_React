@@ -1,5 +1,5 @@
 import styles from "./NavBarLeft.module.css";
-import logo from "../../../../images/mutrix.jpg";
+import logo from "../../../../mediathek/images/mutrix.jpg";
 
 function NavBarLeft() {
   const redirectToHomepage = () => {
