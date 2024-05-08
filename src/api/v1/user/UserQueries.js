@@ -8,14 +8,14 @@ export async function fetchAllUser() {
   return users;
 }
 
-export async function fetchUserById(userId) {
-  const result = await api.get("/user/byid", { params: { userId } });
+export async function fetchCurrentUser(userId) {
+  const result = await api.get("/user/currrentuser", );
 
   const reponse = result.data;
 
-  console.log("Mein user /byid", reponse);
+  console.log("Mein user /currentuser", reponse);
 
   return reponse;
 }
 
-export default { fetchAllUser, fetchUserById };
+export default { fetchAllUser, fetchCurrentUser };

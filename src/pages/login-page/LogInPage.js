@@ -1,5 +1,6 @@
 import StandardBtn from "../../components/common/buttons/standard-btn";
 import UserContext from "../../components/common/userContext/UserContext";
+import TokenHandler from "../../utils/TokenHandler";
 import styles from "./LogInPage.module.css";
 import { useContext, useState } from "react";
 
@@ -11,10 +12,13 @@ function LogInPage() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await logInUser(userName, password);
+      
+      await logInUser(userName, password, );
+          window.location.href = "http://localhost:3000/home";
     } catch (error) {
       console.error("Fehler beim Einloggen:", error);
     }
+
   };
 
   const handleCancel = () => {

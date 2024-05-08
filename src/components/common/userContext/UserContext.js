@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import UserQueries, { fetchAllUser } from "../../../api/v1/user/UserQueries";
+import UserQueries, { fetchAllUser, fetchCurrentUser } from "../../../api/v1/user/UserQueries";
 import { AuthQueries } from "../../../api/v1/auth";
 
 const unauthenticatedRoutes = [
@@ -16,19 +16,11 @@ const UserContext = createContext();
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  async function getCurrentUserFromLocalStorage() {
-    const user = localStorage.getItem("user");
-    if (!user) return;
-    const jsonUser = await JSON.parse(user);
-    if (jsonUser) {
-      setUser(jsonUser);
-    }
-    return jsonUser;
-  }
+
 
   //Funktion zum Abrufen der Benutzerdaten
   async function fetchUserData() {
-    const currentUser = await getCurrentUserFromLocalStorage();
+    const currentUser = await fetchCurrentUser();
     if (!currentUser) {
       setUser(null);
       if (!unauthenticatedRoutes.includes(window.location.pathname)) {
