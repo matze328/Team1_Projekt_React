@@ -8,8 +8,8 @@ export async function fetchAllUser() {
   return users;
 }
 
-export async function fetchCurrentUser(userId) {
-  const result = await api.get("/user/currrentuser", );
+export async function fetchCurrentUser() {
+  const result = await api.get("/user/currrentuser");
 
   const reponse = result.data;
 

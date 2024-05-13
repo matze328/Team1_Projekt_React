@@ -1,6 +1,8 @@
 import React, { createContext, useEffect, useState } from "react";
-import UserQueries, { fetchAllUser, fetchCurrentUser } from "../../../api/v1/user/UserQueries";
+import { fetchCurrentUser } from "../../../api/v1/user/UserQueries";
 import { AuthQueries } from "../../../api/v1/auth";
+import { useNavigate } from "react-router-dom";
+import TokenHandler from "../../../utils/TokenHandler";
 
 const unauthenticatedRoutes = [
   "/login",
@@ -14,39 +16,37 @@ const unauthenticatedRoutes = [
 const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
+  const navigate = useNavigate();
   const [user, setUser] = useState(null);
 
-
-
+  const logOutUser = () => {
+    setUser(null);
+    TokenHandler.deleteAccessToken();
+  };
   //Funktion zum Abrufen der Benutzerdaten
   async function fetchUserData() {
-    const currentUser = await fetchCurrentUser();
-    if (!currentUser) {
-      setUser(null);
-      if (!unauthenticatedRoutes.includes(window.location.pathname)) {
-        window.location.href = "http://localhost:3000/login";
+    try {
+      const result = await fetchCurrentUser();
+      if (result.profile) {
+        setUser(result.profile);
       }
-      return;
-    }
-    const data = await UserQueries.fetchUserById(currentUser.userId);
-    if (data.profile) {
-      localStorage.setItem("user", JSON.stringify(data.profile));
-      setUser(data.profile);
+    } catch (e) {
+      if (e.response.status === 401 || e.response.status === 403) {
+        logOutUser();
+      }
     }
   }
-  const logOutUser = () => {
-    localStorage.removeItem("user");
-  };
+
   const logInUser = async (email, password) => {
     const response = await AuthQueries.loginUser(email, password);
+
     if (response.user) {
-      localStorage.setItem("user", JSON.stringify(response.user));
-      window.location.href = "http://localhost:3000/";
+      setUser(response.user);
+      navigate("/");
     }
   };
   useEffect(() => {
     fetchUserData();
-    console.log("hallo123");
   }, []);
 
   return (
