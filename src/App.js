@@ -21,7 +21,7 @@ import ResetPassword from "./pages/account-page/ResetPassword.js";
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <NavigationBar />
       <Content>
         <Routes>
@@ -42,7 +42,7 @@ function App() {
         </Routes>
       </Content>
       <Footer />
-    </BrowserRouter>
+    </>
   );
 }
 

@@ -12,13 +12,10 @@ function LogInPage() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      
-      await logInUser(userName, password, );
-          window.location.href = "http://localhost:3000/home";
+      await logInUser(userName, password);
     } catch (error) {
       console.error("Fehler beim Einloggen:", error);
     }
-
   };
 
   const handleCancel = () => {
