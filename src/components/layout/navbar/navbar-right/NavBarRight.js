@@ -3,12 +3,14 @@ import UserContext from "../../../common/userContext/UserContext";
 import styles from "./NavBarRight.module.css";
 import LoginButton from "./loginButton/LoginButton";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 function NavBarRight() {
   const { user } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const redirectToSignUp = () => {
-    window.location.href = "http://localhost:3000/signup";
+    navigate("/signup");
   };
 
   if (!user) {

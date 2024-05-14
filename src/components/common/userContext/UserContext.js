@@ -22,6 +22,7 @@ export const UserProvider = ({ children }) => {
   const logOutUser = () => {
     setUser(null);
     TokenHandler.deleteAccessToken();
+    navigate("/");
   };
   //Funktion zum Abrufen der Benutzerdaten
   async function fetchUserData() {

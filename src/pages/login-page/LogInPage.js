@@ -1,13 +1,14 @@
 import StandardBtn from "../../components/common/buttons/standard-btn";
 import UserContext from "../../components/common/userContext/UserContext";
-import TokenHandler from "../../utils/TokenHandler";
 import styles from "./LogInPage.module.css";
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function LogInPage() {
   const [userName, setUsername] = useState("");
   const { logInUser } = useContext(UserContext);
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -19,7 +20,7 @@ function LogInPage() {
   };
 
   const handleCancel = () => {
-    window.location.href = "http://localhost:3000/";
+    navigate("/");
   };
   return (
     <div className={styles.outerContainer}>

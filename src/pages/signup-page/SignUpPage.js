@@ -2,6 +2,7 @@ import StandardBtn from "../../components/common/buttons/standard-btn";
 import styles from "./SignUpPage.module.css";
 import React, { useState } from "react";
 import AuthMutations from "../../api/v1/auth/AuthMutations";
+import { useNavigate } from "react-router-dom";
 
 function SignUpPage() {
   const [newUserName, setNewUserName] = useState("");
@@ -11,9 +12,10 @@ function SignUpPage() {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleCancel = () => {
-    window.location.href = "http://localhost:3000/";
+    navigate("/");
   };
 
   const handleSignup = async () => {
@@ -30,7 +32,7 @@ function SignUpPage() {
         newPassword
       );
       console.log("Benutzer erfolgreich registriert:", profile);
-      window.location.href = "http://localhost:3000/user"; // Weiterleitung zur Benutzerseite
+      navigate("/login"); // Weiterleitung zur Loginseite
     } catch (error) {
       console.error("Fehler beim Registrieren:", error);
       // Hier können Sie eine Fehlermeldung anzeigen
