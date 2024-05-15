@@ -4,6 +4,7 @@ import SidebarHome from "../../components/layout/sidebar-home";
 import { Link } from "react-router-dom";
 import { FiEdit } from "react-icons/fi";
 import UserContext from "../../components/common/userContext/UserContext";
+import { UserMutations } from "../../api/v1/user";
 
 function AccountPage() {
   const { user } = useContext(UserContext);
@@ -12,11 +13,11 @@ function AccountPage() {
   const [editMode, setEditMode] = useState(false);
   // Anfangswerte
   const [values, setValues] = useState({
-    username: "jane",
-    firstName: "Jane",
-    lastName: "Doe",
-    email: "mail@mail.de",
-    password: "sicheres Passwort",
+    userName: user.userName,
+    firstName: user.firstName,
+    lastName: user.lastName,
+    email: user.email,
+    password: user.password,
   });
 
   // Funktion zum Bearbeiten der Eingaben
@@ -29,8 +30,14 @@ function AccountPage() {
     setEditMode(true);
   }
 
-  function saveAndCloseEditMode() {
-    setEditMode(false);
+  async function saveAndCloseEditMode() {
+    try {
+      const updatedProfile = await UserMutations.updateUser(values.userName, values.firstName, values.lastName, values.email, values.password);
+      console.log("Benutzerprofil erfolgreich aktualisiert:", updatedProfile);
+      setEditMode(false);
+    } catch (error) {
+      console.error("Fehler beim Aktualisieren des Benutzerprofils:", error);
+    }
   }
 
   return (
@@ -60,13 +67,13 @@ function AccountPage() {
             <div className={styles.secondHeaderContainer}>
               <div className={styles.labelContainer}>
                 <label>USER</label>
-                <label>Username:</label>
+                <label>User Name:</label>
                 <label>First Name:</label>
                 <label>Last Name:</label>
               </div>
               <div className={styles.infoContainer}>
                 <br></br>
-                {["username", "firstName", "lastName"].map((field, index) => (
+                {["userName", "firstName", "lastName"].map((field, index) => (
                   <div key={index}>
                     {editMode ? (
                       <input
