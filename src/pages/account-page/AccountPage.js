@@ -14,8 +14,8 @@ function AccountPage() {
   // Anfangswerte
   const [values, setValues] = useState({
     userName: user.userName,
-    firstName: user.firstName,
-    lastName: user.lastName,
+    vorName: user.vorName,
+    nachName: user.nachName,
     email: user.email,
     password: user.password,
   });
@@ -32,7 +32,7 @@ function AccountPage() {
 
   async function saveAndCloseEditMode() {
     try {
-      const updatedProfile = await UserMutations.updateUser(values.userName, values.firstName, values.lastName, values.email, values.password);
+      const updatedProfile = await UserMutations.updateUser(values.userName, values.vorName, values.nachName, values.email, values.password);
       console.log("Benutzerprofil erfolgreich aktualisiert:", updatedProfile);
       setEditMode(false);
     } catch (error) {
@@ -73,7 +73,7 @@ function AccountPage() {
               </div>
               <div className={styles.infoContainer}>
                 <br></br>
-                {["userName", "firstName", "lastName"].map((field, index) => (
+                {["userName", "vorName", "nachName"].map((field, index) => (
                   <div key={index}>
                     {editMode ? (
                       <input
