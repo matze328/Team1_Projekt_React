@@ -1,24 +1,22 @@
 import styles from "./AccountPage.module.css";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import SidebarHome from "../../components/layout/sidebar-home";
 import { Link } from "react-router-dom";
 import { FiEdit } from "react-icons/fi";
-import UserContext from "../../components/common/userContext/UserContext";
 import { UserMutations } from "../../api/v1/user";
 
 function AccountPage() {
-  const { user } = useContext(UserContext);
+  // Zustand für Benutzerdaten
+  const [values, setValues] = useState({
+    userName: "",
+    vorName: "",
+    nachName: "",
+    email: "",
+    password: ""
+  });
 
   // Zustand für Bearbeitungsmodus
   const [editMode, setEditMode] = useState(false);
-  // Anfangswerte
-  const [values, setValues] = useState({
-    userName: user.userName,
-    vorName: user.vorName,
-    nachName: user.nachName,
-    email: user.email,
-    password: user.password,
-  });
 
   // Funktion zum Bearbeiten der Eingaben
   function handleChange(e, field) {
@@ -27,14 +25,16 @@ function AccountPage() {
 
   // Funktion zum Umschalten des Bearbeitungsmodus
   function toggleEditMode() {
-    setEditMode(true);
+    setEditMode(!editMode); // toggle between true and false
   }
 
+  // Funktion zum Speichern und Beenden des Bearbeitungsmodus
   async function saveAndCloseEditMode() {
     try {
-      const updatedProfile = await UserMutations.updateUser(values.userName, values.vorName, values.nachName, values.email, values.password);
+      const { userName, vorName, nachName, email, password } = values;
+      const updatedProfile = await UserMutations.updateUser(userName, vorName, nachName, email, password);
       console.log("Benutzerprofil erfolgreich aktualisiert:", updatedProfile);
-      setEditMode(false);
+      setEditMode(false); // Beenden des Bearbeitungsmodus
     } catch (error) {
       console.error("Fehler beim Aktualisieren des Benutzerprofils:", error);
     }
