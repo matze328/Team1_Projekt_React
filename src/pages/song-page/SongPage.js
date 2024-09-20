@@ -1,4 +1,4 @@
-import Mediaplayer from "../../components/layout/mediaplayer";
+
 import styles from "./SongPage.module.css";
 import SidebarStart from "../../components/layout/sidebar-start";
 import UserContext from "../../components/common/userContext/UserContext";
@@ -11,7 +11,7 @@ function SongPage() {
     <>
       {user ? <SidebarHome /> : <SidebarStart />}
       <div className={styles.mainContainer}>
-        <Mediaplayer />
+      <h1>Song-Page</h1>
       </div>
     </>
   );
