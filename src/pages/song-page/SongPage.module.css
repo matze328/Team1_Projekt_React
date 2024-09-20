@@ -1,0 +1,11 @@
+.mainContainer {
+  display: flex;
+  flex-direction: grid;
+  align-items: grid;
+  justify-content: center;
+  width: 60vw;
+  margin: 120px 280px;
+  border-radius: 16px;
+  border: 3px solid lightgrey;
+  backdrop-filter: blur(3px);
+}
