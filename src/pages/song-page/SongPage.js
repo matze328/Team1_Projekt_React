@@ -32,7 +32,6 @@ function SongPage() {
         <>
             {user ? <SidebarHome /> : <SidebarStart />}
             <div className={styles.mainContainer}>
-                <h1>Song-Page</h1>
                 {loading && <p>Lade Songs...</p>}
                 {error && <p>{error}</p>}
                 <ul>
