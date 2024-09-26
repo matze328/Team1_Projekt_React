@@ -36,7 +36,10 @@ function SongPage() {
                 {error && <p>{error}</p>}
                 <ul>
                     {songs.map((song) => (
-                        <li key={song.key}>{song.title}</li> // Ersetze song.id und song.title durch die tatsächlichen Attribute deiner Song-Daten
+                         <li key={song.SongID}> {/* Verwende hier das richtige Attribut für den Schlüssel */}
+                         <strong>{song.ArtistName}</strong> - {song.AlbumName}: 
+                         <a href={song.S3Url} target="_blank" rel="noopener noreferrer"> {song.FileName}</a>
+                     </li>
                     ))}
                 </ul>
             </div>
