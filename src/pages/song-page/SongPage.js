@@ -6,11 +6,13 @@ import SidebarHome from "../../components/layout/sidebar-home";
 import { fetchAllSong } from "../../api/v1/song/SongQueries";
 import AudioPlayer from "react-h5-audio-player";
 
+
 function SongPage() {
     const { user } = useContext(UserContext);
     const [songs, setSongs] = useState([]); 
     const [loading, setLoading] = useState(true); 
     const [error, setError] = useState(null); 
+    const [currentSongUrl, setCurrentSongUrl] = useState(""); // Zustand für das aktuelle Lied
 
     useEffect(() => {
         const getSongs = async () => {
@@ -18,8 +20,8 @@ function SongPage() {
                 const fetchedSongs = await fetchAllSong();
                 setSongs(fetchedSongs);
             } catch (err) {
-                console.error("Fehler beim Abrufen der Songs:", err.message); // Detaillierte Fehlermeldung
-                setError(`Fehler: ${err.message}`); // Setze die Fehlermeldung für die Anzeige
+                console.error("Fehler beim Abrufen der Songs:", err.message);
+                setError(`Fehler: ${err.message}`);
             } finally {
                 setLoading(false);
             }
@@ -27,6 +29,11 @@ function SongPage() {
     
         getSongs();
     }, []);
+
+    // Funktion, um die MP3-URL im Player zu ändern
+    const playSong = (url) => {
+        setCurrentSongUrl(url);
+    };
 
     return (
         <>
@@ -36,15 +43,25 @@ function SongPage() {
                 {error && <p>{error}</p>}
                 <ul>
                     {songs.map((song) => (
-                         <li key={song.SongID}> {/* Verwende hier das richtige Attribut für den Schlüssel */}
-                         <strong>{song.ArtistName}</strong> - {song.AlbumName}: 
-                         <a href={song.S3Url} target="_blank" rel="noopener noreferrer"> {song.FileName}</a>
-                     </li>
+                        <li key={song.SongID}>
+                            <strong>{song.ArtistName}</strong> - {song.AlbumName}: 
+                            {/* OnClick, um den Song im Player abzuspielen */}
+                            <button onClick={() => playSong(song.S3Url)} className={styles.playButton}>
+                                {song.FileName}
+                            </button>
+                        </li>
                     ))}
                 </ul>
-                <AudioPlayer/>
+                {/* Audio Player, der die dynamische URL abspielt */}
+                {currentSongUrl && (
+                    <AudioPlayer
+                        src={currentSongUrl}
+                        onPlay={() => console.log("Lied wird abgespielt")}
+                        autoPlay
+                        controls
+                    />
+                )}
             </div>
-          
         </>
     );
 }
