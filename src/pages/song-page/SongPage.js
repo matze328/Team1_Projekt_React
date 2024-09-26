@@ -4,7 +4,7 @@ import UserContext from "../../components/common/userContext/UserContext";
 import { useContext, useEffect, useState } from "react";
 import SidebarHome from "../../components/layout/sidebar-home";
 import { fetchAllSong } from "../../api/v1/song/SongQueries";
-
+import AudioPlayer from "react-h5-audio-player";
 
 function SongPage() {
     const { user } = useContext(UserContext);
@@ -42,7 +42,9 @@ function SongPage() {
                      </li>
                     ))}
                 </ul>
+                <AudioPlayer/>
             </div>
+          
         </>
     );
 }
