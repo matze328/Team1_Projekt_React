@@ -18,15 +18,15 @@ function SongPage() {
                 const fetchedSongs = await fetchAllSong();
                 setSongs(fetchedSongs);
             } catch (err) {
-                console.error("Fehler beim Abrufen der Songs:", err);
-                setError("Fehler beim Abrufen der Songs");
+                console.error("Fehler beim Abrufen der Songs:", err.message); // Detaillierte Fehlermeldung
+                setError(`Fehler: ${err.message}`); // Setze die Fehlermeldung für die Anzeige
             } finally {
                 setLoading(false);
             }
         };
-
+    
         getSongs();
-    }, []); 
+    }, []);
 
     return (
         <>
