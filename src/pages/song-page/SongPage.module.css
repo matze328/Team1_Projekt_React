@@ -8,4 +8,7 @@
   border-radius: 16px;
   border: 3px solid lightgrey;
   backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.15);
+  color: rgb(150, 150, 140);
+
 }
