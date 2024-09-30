@@ -6,12 +6,11 @@ import SidebarHome from "../../components/layout/sidebar-home";
 import { fetchAllSong } from "../../api/v1/song/SongQueries";
 import AudioPlayer from "react-h5-audio-player";
 
-
 function SongPage() {
     const { user } = useContext(UserContext);
-    const [songs, setSongs] = useState([]); 
-    const [loading, setLoading] = useState(true); 
-    const [error, setError] = useState(null); 
+    const [songs, setSongs] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const [currentSongUrl, setCurrentSongUrl] = useState(""); // Zustand für das aktuelle Lied
 
     useEffect(() => {
@@ -26,7 +25,6 @@ function SongPage() {
                 setLoading(false);
             }
         };
-    
         getSongs();
     }, []);
 
@@ -52,6 +50,7 @@ function SongPage() {
                         </li>
                     ))}
                 </ul>
+
                 {/* Audio Player, der die dynamische URL abspielt */}
                 {currentSongUrl && (
                     <AudioPlayer
