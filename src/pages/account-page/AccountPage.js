@@ -1,23 +1,22 @@
 import styles from "./AccountPage.module.css";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import SidebarHome from "../../components/layout/sidebar-home";
 import { Link } from "react-router-dom";
 import { FiEdit } from "react-icons/fi";
-import UserContext from "../../components/common/userContext/UserContext";
+import { UserMutations } from "../../api/v1/user";
 
 function AccountPage() {
-  const { user } = useContext(UserContext);
+  // Zustand für Benutzerdaten
+  const [values, setValues] = useState({
+    userName: "",
+    vorName: "",
+    nachName: "",
+    email: "",
+    password: ""
+  });
 
   // Zustand für Bearbeitungsmodus
   const [editMode, setEditMode] = useState(false);
-  // Anfangswerte
-  const [values, setValues] = useState({
-    username: "jane",
-    firstName: "Jane",
-    lastName: "Doe",
-    email: "mail@mail.de",
-    password: "sicheres Passwort",
-  });
 
   // Funktion zum Bearbeiten der Eingaben
   function handleChange(e, field) {
@@ -26,11 +25,19 @@ function AccountPage() {
 
   // Funktion zum Umschalten des Bearbeitungsmodus
   function toggleEditMode() {
-    setEditMode(true);
+    setEditMode(!editMode); // toggle between true and false
   }
 
-  function saveAndCloseEditMode() {
-    setEditMode(false);
+  // Funktion zum Speichern und Beenden des Bearbeitungsmodus
+  async function saveAndCloseEditMode() {
+    try {
+      const { userName, vorName, nachName, email, password } = values;
+      const updatedProfile = await UserMutations.updateUser(userName, vorName, nachName, email, password);
+      console.log("Benutzerprofil erfolgreich aktualisiert:", updatedProfile);
+      setEditMode(false); // Beenden des Bearbeitungsmodus
+    } catch (error) {
+      console.error("Fehler beim Aktualisieren des Benutzerprofils:", error);
+    }
   }
 
   return (
@@ -60,13 +67,13 @@ function AccountPage() {
             <div className={styles.secondHeaderContainer}>
               <div className={styles.labelContainer}>
                 <label>USER</label>
-                <label>Username:</label>
+                <label>User Name:</label>
                 <label>First Name:</label>
                 <label>Last Name:</label>
               </div>
               <div className={styles.infoContainer}>
                 <br></br>
-                {["username", "firstName", "lastName"].map((field, index) => (
+                {["userName", "vorName", "nachName"].map((field, index) => (
                   <div key={index}>
                     {editMode ? (
                       <input

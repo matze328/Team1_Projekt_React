@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {  Route, Routes } from "react-router-dom";
 import NavigationBar from "./components/layout/navbar";
 import "./styles/App.css";
 import "./styles/GlobalVars.css";
@@ -18,6 +18,7 @@ import FavoritenPage from "./pages/favoriten-page";
 import AccountPage from "./pages/account-page/AccountPage.js";
 import ProfileSettings from "./pages/account-page/ProfileSettings.js";
 import ResetPassword from "./pages/account-page/ResetPassword.js";
+import SongPage from "./pages/song-page/SongPage.js";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/aboutme" element={<AboutMePage />} />
           <Route path="/radio" element={<RadioPage />} />
+          <Route path="/song" element={<SongPage />} />
           <Route path="/news&blog" element={<NewsPage />} />
           <Route path="/user" element={<UserPage />} />
           <Route path="/favoriten" element={<FavoritenPage />} />

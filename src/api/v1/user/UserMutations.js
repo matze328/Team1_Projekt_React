@@ -1,8 +1,8 @@
 import api from "../../config/api";
 
-async function updateUser(userName, userId, vorName, nachName, email, password) {
+async function updateUser(userName, vorName, nachName, email, password) {
   try {
-    const result = await api.put("/update", { userName, userId, vorName, nachName, email, password });
+    const result = await api.put("/user/update", { userName, vorName, nachName, email, password });
     const updatedProfile = result.data.updatedProfile;
     return updatedProfile;
   } catch (error) {
@@ -13,7 +13,7 @@ async function updateUser(userName, userId, vorName, nachName, email, password) 
 
 async function deleteUser(userId) {
   try {
-    const result = await api.delete("/delete", { data: { userId } });
+    const result = await api.delete("/user/delete", { data: { userId } });
     const deletedUserId = result.data.deletedUserId;
     return deletedUserId;
   } catch (error) {
