@@ -28,10 +28,11 @@ function SongPage() {
         getSongs();
     }, []);
 
-    // Funktion, um die MP3-URL im Player zu ändern
     const playSong = (url) => {
+        console.log("Versuche abzuspielen:", url); 
         setCurrentSongUrl(url);
     };
+    
 
     return (
         <>
@@ -54,11 +55,15 @@ function SongPage() {
                 {/* Audio Player, der die dynamische URL abspielt */}
                 {currentSongUrl && (
                     <AudioPlayer
-                        src={currentSongUrl}
-                        onPlay={() => console.log("Lied wird abgespielt")}
-                        autoPlay
-                        controls
-                    />
+                    src={currentSongUrl}
+                    onPlay={() => console.log("Lied wird abgespielt")}
+                    onError={(e) => {
+                        console.error("Fehler beim Abspielen:", e);
+                        alert("Fehler beim Laden des Songs.");
+                    }}
+                    autoPlay
+                    controls
+                />                
                 )}
             </div>
         </>
