@@ -70,7 +70,11 @@ function SongPage() {
     // Funktion zum Abspielen eines Songs
     const playSong = (url) => {
         console.log("Versuche abzuspielen:", url);
-        setCurrentSongUrl(url); // Setze die URL des aktuellen Songs
+        if (url) {  // Überprüfen ob die URL definiert ist
+            setCurrentSongUrl(url); // Setze die URL des aktuellen Songs
+        } else {
+            console.warn("Keine gültige URL zum Abspielen.");
+        }
     };
 
     return (
@@ -126,15 +130,15 @@ function SongPage() {
 
                         {/* Audio Player für den aktuellen Song */}
                         {currentSongUrl && (
-                            <AudioPlayer
-                                src={currentSongUrl}
-                                onPlay={() => console.log("Lied wird abgespielt")}
+                            <AudioPlayer 
+                                src={currentSongUrl} 
+                                onPlay={() => console.log("Lied wird abgespielt")} 
                                 onError={(e) => {
                                     console.error("Fehler beim Abspielen:", e);
                                     alert("Fehler beim Laden des Songs.");
-                                }}
-                                autoPlay
-                                controls
+                                }} 
+                                autoPlay 
+                                controls 
                             />
                         )}
                     </div>
