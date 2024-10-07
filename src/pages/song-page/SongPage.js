@@ -76,7 +76,7 @@ function SongPage() {
             console.warn("Keine gültige URL zum Abspielen.");
         }
     };
-
+    console.log("URL?", songs);
     return (
         <>
             {user ? <SidebarHome /> : <SidebarStart />}
