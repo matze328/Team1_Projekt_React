@@ -3,6 +3,7 @@ import { IoStarOutline } from "react-icons/io5";
 import { PiRadio } from "react-icons/pi";
 import { faker } from "@faker-js/faker";
 import { MdManageAccounts } from "react-icons/md";
+import { BsFiletypeMp3 } from "react-icons/bs";
 
 const profilePic = faker.image.avatar();
 
@@ -22,6 +23,9 @@ function SidebarHome() {
   const redirectToRadioPage = () => {
     window.location.href = "http://localhost:3000/radio";
   };
+  const redirectToSongPage = () => {
+    window.location.href = "http://localhost:3000/song";
+  };
 
   return (
     <div className={styles.mainContainer}>
@@ -39,6 +43,13 @@ function SidebarHome() {
         <PiRadio
           className={styles.icon}
           onClick={redirectToRadioPage}
+          size={80}
+        />
+      </div>
+      <div className={styles.iconContainer}>
+        <BsFiletypeMp3 
+          className={styles.icon}
+          onClick={redirectToSongPage}
           size={80}
         />
       </div>
